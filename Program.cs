@@ -1,4 +1,4 @@
-using Synthboard.Models;  // <== INSERT YOUR PROJECT NAME HERE //
+using SynthBoardCollab.Models;  // <== INSERT YOUR PROJECT NAME HERE //
 using Microsoft.EntityFrameworkCore;
 
 
