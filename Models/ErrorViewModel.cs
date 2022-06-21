@@ -1,4 +1,4 @@
-namespace Synthboard.Models;
+namespace SynthBoardCollab.Models;
 
 public class ErrorViewModel
 {
