@@ -1,17 +1,22 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Synthboard.Models;
+using SynthBoardCollab.Models;
 
-namespace Synthboard.Controllers;
+namespace SynthBoardCollab.Controllers;
 
 public class HomeController : Controller
 {
 
     [HttpGet]
     [Route("/")]
-    public IActionResult SynthboardSkeleton()
+    public IActionResult Index()
     {
-        return View("SynthboardSkeleton");
+        int? UID = HttpContext.Session.GetInt32("UserID");
+        if(UID != null)
+        {
+            return RedirectToAction("Dashboard", "User");
+        }
+        return RedirectToAction("LogReg", "User");
     }
 
     public IActionResult Privacy()
