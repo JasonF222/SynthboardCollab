@@ -9,25 +9,25 @@ const background = [
     "linear-gradient(transparent, blueviolet)"
 ];
 
-const amount = 45; // amount of raindops
+const amount = 65; // amount of raindops
 let i = 0;
 let drop, raindropProperties;
 
-
+// Looping and creating the raindrop then adding to the rainContainer
 while (i < amount) {
     drop = document.createElement("i");
 
-    //   Raindrop CSS properties //
+    //   CSS Properties for raindrop
     raindropProperties = {
         width: Math.random() * 5 + "px",
         positionX: Math.floor(Math.random() * window.innerWidth) + "px",
-        delay: Math.random() * -20 + "s",
-        duration: Math.random() * 5 + "s",
+        delay: Math.random() * -7 + "s",
+        duration: Math.random() * 25 + 1 + "s",
         bg: background[Math.floor(Math.random() * background.length)],
         opacity: Math.random() + 0.2
     };
 
-    //   Raindrop styling //
+    //   Setting Styles for raindrop
     drop.style.width = raindropProperties.width;
     drop.style.left = raindropProperties.positionX;
     drop.style.animationDelay = raindropProperties.delay;
@@ -35,7 +35,7 @@ while (i < amount) {
     drop.style.background = raindropProperties.bg;
     drop.style.opacity = raindropProperties.opacity;
 
-    //   Raindrop into rainContainer //
+    //   Appending the raindrop in the raindrop container
     rainContainer.appendChild(drop);
     i++;
 }

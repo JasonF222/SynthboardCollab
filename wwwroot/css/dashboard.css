@@ -18,6 +18,10 @@ body {
 
 .welcome {
     font-size: 28pt;
+    font-family: 'Permanent Marker', cursive;
+    background: -webkit-linear-gradient(bottom, lightyellow, gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .navhead {
@@ -32,15 +36,19 @@ body {
 .logoutbtn {
     transform: scale(1);
     transition-duration: 1s;
+    background: -webkit-linear-gradient(bottom, lightpink, hotpink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .logoutbtn:hover {
-    transform: scale(1.5);
+    transform: scale(1.15);
     transition-duration: 1s;
 }
 
 .buttonstyle {
     font-size: 16pt;
+    font-family: 'Permanent Marker', cursive;
     text-decoration: none;
     color: hotpink;
 }
@@ -68,13 +76,24 @@ body {
     margin-right: auto;
     margin-top: 5%;
     text-align: center;
-    width: 400px;
+    width: 500px;
     text-overflow: wrap;
 }
 
 .selectHeader {
     font-size: 48pt;
+    font-family: 'Permanent Marker', cursive;
     font-weight: bolder;
+    color: rebeccapurple;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px white;
+        /* 0 0 82px hotpink, */
+        /* 0 0 92px white,
+        0 0 102px white,
+        0 0 151px white; */
 }
 /* Classic Board */
 
