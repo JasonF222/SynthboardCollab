@@ -83,4 +83,11 @@ public class UserController : Controller
         return LogReg();
     }
 
+    [HttpGet]
+    [Route("/user/logout")]
+    public IActionResult Logout()
+    {
+        HttpContext.Session.Clear();
+        return RedirectToAction("LogReg");
+    }
 }
