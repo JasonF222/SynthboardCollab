@@ -40,7 +40,7 @@ public class UserController : Controller
     
     [HttpPost]
     [Route("/user/register")]
-    public IActionResult RegisterUser(User newUser)
+    public IActionResult Register(User newUser)
     {
         if(ModelState.IsValid)
         {
@@ -60,7 +60,7 @@ public class UserController : Controller
     }
 
     [HttpPost]
-    [Route("login")]
+    [Route("user/login")]
     public IActionResult Login(LogUser newLogUser)
     {
         if(ModelState.IsValid)
