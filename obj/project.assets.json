@@ -705,19 +705,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Steve\\.nuget\\packages\\": {}
+    "C:\\Users\\Jason\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Steve\\Desktop\\C#Project\\SynthboardCollab\\Synthboard.csproj",
+      "projectUniqueName": "C:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\Synthboard.csproj",
       "projectName": "Synthboard",
-      "projectPath": "C:\\Users\\Steve\\Desktop\\C#Project\\SynthboardCollab\\Synthboard.csproj",
-      "packagesPath": "C:\\Users\\Steve\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Steve\\Desktop\\C#Project\\SynthboardCollab\\obj\\",
+      "projectPath": "C:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\Synthboard.csproj",
+      "packagesPath": "C:\\Users\\Jason\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Steve\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Jason\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

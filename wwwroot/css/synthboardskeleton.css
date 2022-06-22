@@ -34,7 +34,7 @@ h1 {
     font-size: 20pt;
 }
 
-.keydiv {
+.boardTypeDiv {
     display: flex;
     justify-content: center;
     margin-top: 5px;
