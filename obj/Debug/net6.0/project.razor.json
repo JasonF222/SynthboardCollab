@@ -16348,6 +16348,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Steve\\Desktop\\C#Project\\SynthboardCollab\\Views\\User\\Dashboard.cshtml",
+      "TargetPath": "Views\\User\\Dashboard.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Steve\\Desktop\\C#Project\\SynthboardCollab\\Views\\User\\_RegForm.cshtml",
       "TargetPath": "Views\\User\\_RegForm.cshtml",
       "FileKind": "mvc"

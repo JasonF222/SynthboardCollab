@@ -35,7 +35,7 @@ public class UserController : Controller
             return RedirectToAction("LogReg");
         }
         User? oneUser = _context.Users.FirstOrDefault(u => u.UserID == UID);
-        return View(oneUser);
+        return View("Dashboard", oneUser);
     }
     
     [HttpPost]

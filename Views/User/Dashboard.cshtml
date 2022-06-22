@@ -1,0 +1,14 @@
+@model User
+<div class="navhead">
+    <h1 class="welcome">Welcome @Model.UserName</h1>
+    <p class="logoutbtn"><a asp-controller="User" asp-action="Logout" class="buttonstyle">Logout</a></p>
+</div>
+
+<div class="rain-container"></div>
+
+<div class="selectBoard">
+    <h1 class="SelectHeader">Select a Board</h1>
+</div>
+<div class="boardContainer">
+    @* Add Boards in Here *@
+</div>
