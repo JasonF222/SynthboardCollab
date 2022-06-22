@@ -8,7 +8,6 @@ public class Board
 
     [Required(ErrorMessage = "is required.")]
     public string Name {get; set;}
-    public string Variant {get; set;}
     public string? CustomSound {get; set;}
     // if the customSound is null, we will use the base oscillator, however if we have a custom sound we will refer to the table 
     // we will use the variant key to determine the frequencies to play the custom sound at
