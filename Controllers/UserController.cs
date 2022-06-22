@@ -60,7 +60,7 @@ public class UserController : Controller
     }
 
     [HttpPost]
-    [Route("user/login")]
+    [Route("/user/login")]
     public IActionResult Login(LogUser newLogUser)
     {
         if(ModelState.IsValid)
