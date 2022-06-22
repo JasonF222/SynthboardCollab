@@ -12,7 +12,6 @@ public class Board
     public string? CustomSound {get; set;}
     // if the customSound is null, we will use the base oscillator, however if we have a custom sound we will refer to the table 
     // we will use the variant key to determine the frequencies to play the custom sound at
-    public List<Favorite> UserFavorite {get; set;} = new List<Favorite>(); 
     public List<SoundFile> CustomSounds {get; set;} = new List<SoundFile>();
     public DateTime CreatedAt {get; set;} = DateTime.Now;
     public DateTime UpdatedAt {get; set;} = DateTime.Now;

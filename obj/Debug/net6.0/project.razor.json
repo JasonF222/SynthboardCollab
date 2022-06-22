@@ -16308,6 +16308,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\Views\\User\\LogReg.cshtml",
+      "TargetPath": "Views\\User\\LogReg.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\Views\\Shared\\SynthboardSkeleton.cshtml",
       "TargetPath": "Views\\Shared\\SynthboardSkeleton.cshtml",
       "FileKind": "mvc"
@@ -16323,8 +16328,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\Views\\User\\_RegForm.cshtml",
+      "TargetPath": "Views\\User\\_RegForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\Views\\Board\\PlayBoard.cshtml",
+      "TargetPath": "Views\\Board\\PlayBoard.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\Views\\User\\_LogForm.cshtml",
+      "TargetPath": "Views\\User\\_LogForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\Views\\User\\Dashboard.cshtml",
+      "TargetPath": "Views\\User\\Dashboard.cshtml",
       "FileKind": "mvc"
     },
     {
