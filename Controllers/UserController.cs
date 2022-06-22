@@ -1,7 +1,5 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SynthBoardCollab.Models;
 
 namespace SynthBoardCollab.Controllers;
@@ -36,8 +34,7 @@ public class UserController : Controller
             ViewBag.NotLogged = "You must Login or Register to view content.";
             return RedirectToAction("LogReg");
         }
-        User? oneUser = _context.Users.Include(u => u.FavoriteBoards).ThenInclude(f => f.Board).FirstOrDefault(u => u.UserID == UID);
-        ViewBag.BoardList = _context.Boards.Include(b => b.UserFavorite).Where(f => !f.UserFavorite.Any(f=> f.UserID == oneUser.UserID));
+        User? oneUser = _context.Users.FirstOrDefault(u => u.UserID == UID);
         return View(oneUser);
     }
     
