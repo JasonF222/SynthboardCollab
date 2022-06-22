@@ -1,14 +1,44 @@
 @model User
-<div class="navhead">
-    <h1 class="welcome">Welcome @Model.UserName</h1>
-    <p class="logoutbtn"><a asp-controller="User" asp-action="Logout" class="buttonstyle">Logout</a></p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="wwwroot\css\dashboard.css">
+    
+</head>
+<body>
+    <div class="navhead">
+        <h1 class="welcome">Welcome @Model.UserName</h1>
+        <p class="logoutbtn"><a asp-controller="User" asp-action="Logout" class="buttonstyle">Logout</a></p>
+    </div>
 
-<div class="rain-container"></div>
+    <div class="rain-container">
 
-<div class="selectBoard">
-    <h1 class="SelectHeader">Select a Board</h1>
-</div>
-<div class="boardContainer">
-    @* Add Boards in Here *@
-</div>
+    </div>
+
+    <div class="selectBoard">
+        <h1 class="selectHeader">Select a Board</h1>
+    </div>
+    <div class="boardContainer">
+        <div class="board boardClassic">
+            <p>Classic</p>
+        </div>
+        <div class=" board boardFireStyle">
+            <p>Fire</p>
+        </div>
+        <div class=" board boardWaterStyle">
+            <p>Water</p>
+        </div>
+        <div class=" board boardSpaceStyle">
+            <p>Space</p>
+        </div>
+    </div>
+    <script src="wwwroot\js\dashboardscript.js"></script>
+</body>
+</html>

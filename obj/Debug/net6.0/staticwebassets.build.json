@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rfOkWhIkauCYEBHLKaCG2jS+3t8atNIl+TbtYQYdPuU=",
+  "Hash": "1plo6vx1EdX9EeUpWuFVzL+1FP2JvgOYjBQi6x1q/Js=",
   "Source": "Synthboard",
   "BasePath": "_content/Synthboard",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Synthboard.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\wwwroot\\css\\dashboard.css",
+      "SourceId": "Synthboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\wwwroot\\",
+      "BasePath": "_content/Synthboard",
+      "RelativePath": "css/dashboard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\dashboard.css"
     },
     {
       "Identity": "C:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\wwwroot\\css\\site.css",
@@ -100,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\wwwroot\\js\\dashboardscript.js",
+      "SourceId": "Synthboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\wwwroot\\",
+      "BasePath": "_content/Synthboard",
+      "RelativePath": "js/dashboardscript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\dashboardscript.js"
     },
     {
       "Identity": "C:\\Users\\Jason\\Desktop\\C#Project\\SynthboardCollab\\wwwroot\\js\\site.js",

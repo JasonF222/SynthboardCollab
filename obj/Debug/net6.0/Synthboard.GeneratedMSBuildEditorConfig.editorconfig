@@ -8,61 +8,61 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Synthboard
 build_property.RootNamespace = Synthboard
-build_property.ProjectDir = c:\Users\Jason\Desktop\C#Project\SynthboardCollab\
+build_property.ProjectDir = C:\Users\Jason\Desktop\C#Project\SynthboardCollab\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\Jason\Desktop\C#Project\SynthboardCollab
+build_property.MSBuildProjectDirectory = C:\Users\Jason\Desktop\C#Project\SynthboardCollab
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Board/PlayBoard.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Board/PlayBoard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9hcmRcUGxheUJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Home/Index.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Home/Privacy.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Shared/Error.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Shared/SynthboardSkeleton.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Shared/SynthboardSkeleton.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFN5bnRoYm9hcmRTa2VsZXRvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/User/Dashboard.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/User/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/User/LogReg.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/User/LogReg.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dSZWcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/User/_LogForm.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/User/_LogForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfTG9nRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/User/_RegForm.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/User/_RegForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfUmVnRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/_ViewImports.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/_ViewStart.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Shared/_Layout.cshtml]
+[C:/Users/Jason/Desktop/C\#Project/SynthboardCollab/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-fci2ai7d65
