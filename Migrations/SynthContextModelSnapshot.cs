@@ -38,10 +38,6 @@ namespace Synthboard.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Variant")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.HasKey("BoardID");
 
                     b.ToTable("Boards");
@@ -101,9 +97,11 @@ namespace Synthboard.Migrations
 
             modelBuilder.Entity("SynthBoardCollab.Models.SoundFile", b =>
                 {
-                    b.HasOne("SynthBoardCollab.Models.Board", null)
+                    b.HasOne("SynthBoardCollab.Models.Board", "Board")
                         .WithMany("CustomSounds")
                         .HasForeignKey("BoardID");
+
+                    b.Navigation("Board");
                 });
 
             modelBuilder.Entity("SynthBoardCollab.Models.Board", b =>
