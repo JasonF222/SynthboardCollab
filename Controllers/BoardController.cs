@@ -1,5 +1,3 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SynthBoardCollab.Models;
@@ -26,7 +24,5 @@ public class BoardController : Controller
         }
         Board? oneBoard = _context.Boards.FirstOrDefault(b => b.BoardID == id);
         return View(oneBoard);
-    }
-
-    
+    }   
 }
