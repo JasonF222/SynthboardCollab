@@ -1,20 +1,15 @@
 using SynthBoardCollab.Models;  // <== INSERT YOUR PROJECT NAME HERE //
 using Microsoft.EntityFrameworkCore;
-
-
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
-
-// builder.Services.AddDbContext<ExampleContext>( options =>
-// {
-//     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-// });
-
+builder.Services.AddDbContext<SynthContext>(options =>
+{
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,9 +21,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
-
 app.UseSession();
+
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
