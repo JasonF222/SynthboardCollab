@@ -56,6 +56,7 @@ public class UserController : Controller
             HttpContext.Session.SetInt32("UserID", newUser.UserID);
             return RedirectToAction("Dashboard");
         }
+        ViewBag.RegFailure = "There was a problem registering in \n Click Register to view errors.";
         return LogReg();
     }
 
@@ -75,11 +76,13 @@ public class UserController : Controller
             var result = PwHash.VerifyHashedPassword(newLogUser, userInDb.Password,newLogUser.LogPass);
             if(result == 0 ){
                 ModelState.AddModelError("Email","Invalid Email or Password");
+                ViewBag.LogFailure = "There was a problem logging in \n Click Login to view errors.";
                 return LogReg();
             }
             HttpContext.Session.SetInt32("UserID", userInDb.UserID);
             return RedirectToAction("Dashboard");
         }
+        ViewBag.LogFailure = "There was a problem logging in \n Click Login to view errors.";
         return LogReg();
     }
 
