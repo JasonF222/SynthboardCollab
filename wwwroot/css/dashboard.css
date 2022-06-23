@@ -1,0 +1,430 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Calligraffitti', cursive;
+    font-weight: bolder;
+}
+
+.text-center {
+    text-align: center;
+}
+
+body {
+    background-color: black;
+    color: whitesmoke;
+    height: 100%;
+    overflow: hidden;
+}
+
+.welcome {
+    font-size: 28pt;
+    font-family: 'Permanent Marker', cursive;
+    background: -webkit-linear-gradient(bottom, lightyellow, gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navhead {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    text-align: center;
+    width: 400px;
+    text-overflow: wrap;
+}
+
+.logoutbtn {
+    transform: scale(1);
+    transition-duration: 1s;
+    background: -webkit-linear-gradient(bottom, lightpink, hotpink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logoutbtn:hover {
+    transform: scale(1.15);
+    transition-duration: 1s;
+}
+
+.buttonstyle {
+    font-size: 16pt;
+    font-family: 'Permanent Marker', cursive;
+    text-decoration: none;
+    color: hotpink;
+}
+
+.boardContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 6%;
+}
+
+/* img {
+    margin-top: -4.5vw;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+} */
+
+.board {
+    font-size: 32pt;
+}
+
+.selectBoard {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    text-align: center;
+    width: 500px;
+    text-overflow: wrap;
+}
+
+.selectHeader {
+    font-size: 48pt;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: bolder;
+    color: rebeccapurple;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px white;
+        /* 0 0 82px hotpink, */
+        /* 0 0 92px white,
+        0 0 102px white,
+        0 0 151px white; */
+}
+/* Classic Board */
+
+.boardClassic {
+    animation: flicker 2.5s infinite alternate;
+    width: 200px;
+    text-align: center;
+    animation-delay: 0.75s;
+    opacity: 1;
+    color: black;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px greenyellow,
+        0 0 82px greenyellow,
+        0 0 92px greenyellow,
+        0 0 102px greenyellow,
+        0 0 151px greenyellow;
+    transform: scale(1);
+    transition-duration: 1s;
+    
+    border: 0.2rem solid white;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem greenyellow,
+        0 0 0.8rem greenyellow,
+        0 0 2.8rem greenyellow,
+        inset 0 0 1.3rem greenyellow;
+}
+
+.boardClassic:hover {
+    transform: scale(1.2);
+    transition-duration: 1s;
+    width: 200px;
+    text-align: center;
+    color: white;
+    opacity: 1;
+    cursor: pointer;
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem greenyellow,
+        0 0 0.8rem greenyellow,
+        0 0 2.8rem greenyellow,
+        inset 0 0 1.3rem greenyellow;
+}
+
+@keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px greenyellow,
+            0 0 80px greenyellow,
+            0 0 90px greenyellow,
+            0 0 100px greenyellow,
+            0 0 150px greenyellow;
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
+}
+
+/* Fire Style */
+
+.boardFireStyle {
+    animation: fire-flicker 2.5s infinite alternate;
+    animation-delay: 0.35s;
+    width: 200px;
+    text-align: center;
+    opacity: 1;
+    color: black;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px orange,
+        0 0 82px orange,
+        0 0 92px red,
+        0 0 102px orangered,
+        0 0 151px yellow;
+    transform: scale(1);
+    transition-duration: 1s;
+    border: 0.2rem solid white;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem orange,
+        0 0 0.8rem orange,
+        0 0 2.8rem orangered,
+        inset 0 0 1.3rem orange;
+}
+
+.boardFireStyle:hover {
+    transform: scale(1.2);
+    transition-duration: 1s;
+    width: 200px;
+    text-align: center;
+    color: white;
+    opacity: 1;
+    cursor: pointer;
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem orange,
+        0 0 0.8rem orange,
+        0 0 2.8rem orangered,
+        inset 0 0 1.3rem orange;
+}
+
+@keyframes fire-flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px orange,
+            0 0 80px orange,
+            0 0 90px yellow,
+            0 0 100px red,
+            0 0 150px orange;
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
+}
+
+/* Water Style */
+
+.boardWaterStyle {
+    animation: water-flicker 2.5s infinite alternate;
+    width: 200px;
+    text-align: center;
+    opacity: 1;
+    color: black;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px slategray,
+        0 0 82px slategray,
+        0 0 92px slategray,
+        0 0 102px aquamarine,
+        0 0 151px aqua;
+    transform: scale(1);
+    transition-duration: 1s;
+    border: 0.2rem solid white;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem slategray,
+        0 0 0.8rem slategray,
+        0 0 2.8rem aquamarine,
+        inset 0 0 1.3rem aqua;
+}
+
+.boardWaterStyle:hover {
+    transform: scale(1.2);
+    transition-duration: 1s;
+    width: 200px;
+    text-align: center;
+    color: white;
+    opacity: 1;
+    cursor: pointer;
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem slategray,
+        0 0 0.8rem slategray,
+        0 0 2.8rem aquamarine,
+        inset 0 0 1.3rem aqua;
+}
+
+@keyframes water-flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px slategray,
+            0 0 80px slategray,
+            0 0 90px aquamarine,
+            0 0 100px aqua,
+            0 0 150px slategray;
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
+}
+
+/* Space Style */
+
+.boardSpaceStyle {
+    animation: space-flicker 2.5s infinite alternate;
+    animation-delay: 0.45s;
+    width: 200px;
+    text-align: center;
+    opacity: 1;
+    color: black;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px blueviolet,
+        0 0 82px blueviolet,
+        0 0 92px hotpink,
+        0 0 102px aquamarine,
+        0 0 151px blueviolet;
+    transform: scale(1);
+    transition-duration: 1s;
+    border: 0.2rem solid white;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem blueviolet,
+        0 0 0.8rem blueviolet,
+        0 0 2.8rem aquamarine,
+        inset 0 0 1.3rem blueviolet;
+}
+
+.boardSpaceStyle:hover {
+    transform: scale(1.2);
+    transition-duration: 1s;
+    width: 200px;
+    text-align: center;
+    color: white;
+    opacity: 1;
+    cursor: pointer;
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem blueviolet,
+        0 0 0.8rem blueviolet,
+        0 0 2.8rem aquamarine,
+        inset 0 0 1.3rem blueviolet;
+}
+
+@keyframes space-flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px blueviolet,
+            0 0 80px hotpink,
+            0 0 90px aquamarine,
+            0 0 100px blueviolet,
+            0 0 150px blueviolet;
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
+}
+
+/* rain */
+
+.rain-container {
+    position: absolute;
+    z-index: -2;
+    background: #000;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+    background-size: cover;
+}
+
+i {
+    position: absolute;
+    height: 120px;
+    border-radius: 0 0 999px 999px;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(-120px);
+    }
+
+    100% {
+        transform: translateY(calc(100vh + 120px));
+    }
+}
