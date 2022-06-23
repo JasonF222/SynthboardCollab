@@ -1,10 +1,32 @@
-<h1 class="text-center">LOGIN AND REGISTER HEADER HERE</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Synth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/logregstyle.css">
+</head>
+<body>
+    <div class="titlehead">
+        <h1 class="title">Mr Synth</h1>
+    </div>
 
-<div class="d-flex">
-    <div class="RegDiv">
+    <div class="LognRegbtn">
+        <h1 class="welcomereg" onclick="registerBtn(this)">Register</h1>
+        <h1 class="welcomelog" onclick="loginBtn(this)">Login</h1>
+    </div>
+
+    <div class="regdiv">
         <partial name="_RegForm"/>
     </div>
-    <div class="LogDiv">
+
+    <div class="logdiv">
         <partial name="_LogForm"/>
     </div>
-</div>
+    <script src="~/js/logregscript.js"></script>
+</body>
+</html>

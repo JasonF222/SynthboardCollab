@@ -1,11 +1,15 @@
 @model LogUser
 
 <form asp-action="Login" asp-Controller="User" method="post">
-    <label asp-for="LogEmail"></label>
-    <span asp-validation-for="LogEmail"></span>
-    <input asp-for="LogEmail">
-    <label asp-for="LogPass"></label>
-    <span asp-validation-for="LogPass"></span>
-    <input asp-for="LogPass">
-    <input type="submit" value="Login">
+    <div class="loginEmail">
+        <label asp-for="LogEmail" class="loginform-label"></label>
+        <span asp-validation-for="LogEmail" class="spantxt"></span>
+        <input asp-for="LogEmail" class="loginform-control">
+    </div>
+    <div class="loginPassword">
+        <label asp-for="LogPass" class="loginform-label"></label>
+        <span asp-validation-for="LogPass" class="spantxt"></span>
+        <input asp-for="LogPass" class="loginform-control">
+    </div>
+    <input type="submit" value="Login" class="loginbtn">
 </form>
