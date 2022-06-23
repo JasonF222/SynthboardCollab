@@ -4,7 +4,7 @@ A C# project collaboration between Jason Frantz and Stephen Nagasawa!
 
 A feature rich synthesizer board emulator with custom animated backgrounds, preset boards, a built in dashboard, recording and playback, and more!
 
-run the following commands in MySQL prior to attempting to use the synthbaord:
+run the following commands in MySQL prior to attempting to use the synthboard:
 
 Insert INTO boards (Name, createdAt, updatedAt) Values ("Water", Now(), Now());
 
