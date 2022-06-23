@@ -1,16 +1,24 @@
 @model User
 <form asp-action="Register" asp-controller="User" method="post">
-    <label asp-for="UserName"></label>
-    <span asp-validation-for="UserName"></span>
-    <input asp-for="UserName">
-    <label asp-for="Email"></label>
-    <span asp-validation-for="Email"></span>
-    <input asp-for="Email">
-    <label asp-for="Password"></label>
-    <span asp-validation-for="Password"></span>
-    <input asp-for="Password">
-    <label asp-for="ConfirmPassword"></label>
-    <span asp-validation-for="ConfirmPassword"></span>
-    <input asp-for="ConfirmPassword">
-    <input type="submit" value="Register">
+    <div class="UserName">
+        <label asp-for="UserName" class="form-label"></label>
+        <span asp-validation-for="UserName" class="spantxt"></span>
+        <input asp-for="UserName" class="form-control">
+    </div>
+    <div class="Email">
+        <label asp-for="Email" class="form-label"></label>
+        <span asp-validation-for="Email" class="spantxt"></span>
+        <input asp-for="Email" class="form-control">
+    </div>
+    <div class="Password">
+        <label asp-for="Password" class="form-label"></label>
+        <span asp-validation-for="Password" class="spantxt"></span>
+        <input asp-for="Password" class="form-control">
+    </div>
+    <div class="ConfirmPassword">
+        <label asp-for="ConfirmPassword" class="form-label"></label>
+        <span asp-validation-for="ConfirmPassword" class="spantxt"></span>
+        <input asp-for="ConfirmPassword" class="form-control">
+    </div>
+    <input type="submit" value="Register" class="regbtn">
 </form>

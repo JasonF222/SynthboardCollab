@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Calligraffitti', cursive;
+    font-weight: bolder;
+}
+
+body {
+    background-color: black;
+    color: whitesmoke;
+    height: 100%;
+    overflow: hidden;
+}
+
+.titlehead {
+    text-align: center;
+}
+
+.title {
+    animation: titleflicker 2.5s infinite alternate;
+    animation-delay: 1s;
+    margin-top: 3vw;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 48pt;
+    font-family: 'Permanent Marker', cursive;
+    background: -webkit-linear-gradient(bottom,hotpink, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 7px solid white;
+    border-radius: 15px;
+    padding-top: 1px;
+    padding-bottom: 3px;
+    width: 300px;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem hotpink,
+        0 0 0.8rem white,
+        0 0 2.8rem red,
+        inset 0 0 1.3rem red;
+}
+
+@keyframes titleflicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem hotpink,
+        0 0 0.8rem hotpink,
+        0 0 2.8rem red,
+        inset 0 0 1.3rem red;
+    }
+
+    20%,
+    24%,
+    55% {
+        box-shadow: none;
+    }
+}
+
+.welcomelog {
+    cursor: pointer;
+    margin-top: 10%;
+    text-align: center;
+    font-size: 36pt;
+    font-family: 'Permanent Marker', cursive;
+    color: green;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px white;
+    transform: scale(1);
+    transition-duration: 1s;
+}
+
+.welcomelog:hover {
+    transform: scale(1.2);
+    transition-duration: 1s;
+}
+
+.welcomereg {
+    cursor: pointer;
+    margin-top: 10%;
+    text-align: center;
+    font-size: 36pt;
+    font-family: 'Permanent Marker', cursive;
+    color: rebeccapurple;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px white;
+    transform: scale(1);
+    transition-duration: 1s;
+}
+
+.welcomereg:hover {
+    transform: scale(1.2);
+    transition-duration: 1s;
+}
+
+.LognRegbtn {
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.regdiv {
+    animation: flicker 2.5s infinite alternate;
+    display: flex;
+    margin-left: 26vw;
+    margin-top: 1vw;
+    width: 250px;
+    padding: 10px;
+    border: 0.2rem solid white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem rebeccapurple,
+        0 0 0.8rem rebeccapurple,
+        0 0 2.8rem rebeccapurple,
+        inset 0 0 1.3rem rebeccapurple;
+    transition-duration: 2s;
+    animation-delay: 0.55s;
+    transform: scaleY(0);
+    height: 100%;
+}
+
+
+@keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem rebeccapurple,
+        0 0 0.8rem rebeccapurple,
+        0 0 2.8rem rebeccapurple,
+        inset 0 0 1.3rem rebeccapurple;
+    }
+
+    20%,
+    24%,
+    55% {
+        box-shadow: none;
+    }
+}
+
+.logdiv {
+    animation: loginflicker 2.5s infinite alternate;
+    display: flex;
+    margin-left: auto;
+    margin-right: 23vw;
+    margin-top: -19vw;
+    width: 250px;
+    padding: 10px;
+    border: 0.2rem solid white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem green,
+        0 0 0.8rem green,
+        0 0 2.8rem green,
+        inset 0 0 1.3rem green;
+    transition-duration: 2s;
+    transform: scaleY(0.0);
+    height: 100%;
+}
+
+@keyframes loginflicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem green,
+        0 0 0.8rem green,
+        0 0 2.8rem green,
+        inset 0 0 1.3rem green;
+    }
+
+    20%,
+    24%,
+    55% {
+        box-shadow: none;
+    }
+}
+
+.form-label {
+    display: block;
+    margin-top: 5px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 18pt;
+    color: rebeccapurple;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px white;
+}
+
+.loginform-label {
+    display: block;
+    margin-top: 5px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 18pt;
+    color: green;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px white;
+}
+
+.form-control {
+    margin-top: 5px;
+    width: 235px;
+    height: 25px;
+    border: 2px solid rebeccapurple;
+    background-color: black;
+    color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.loginform-control {
+    margin-top: 5px;
+    width: 235px;
+    height: 25px;
+    border: 2px solid green;
+    background-color: black;
+    color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.spantxt {
+    font-size: 12pt;
+    color: goldenrod;
+}
+
+.regbtn {
+    margin-top: 10px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 14pt;
+    border: 2px solid rebeccapurple;
+    background-color: black;
+    width: 105px;
+    height: 30px;
+    color: rebeccapurple;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px white;
+    transform: scale(1);
+    transition-duration: 1s;
+}
+
+.regbtn:hover {
+    transform: scale(1.1);
+    transition-duration: 1s;
+    border-radius: 5px;
+}
+
+.loginbtn {
+    margin-top: 10px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 14pt;
+    border: 2px solid green;
+    background-color: black;
+    width: 105px;
+    height: 30px;
+    color: green;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px white;
+    transform: scale(1);
+    transition-duration: 1s;
+}
+
+.loginbtn:hover {
+    transform: scale(1.1);
+    transition-duration: 1s;
+    border-radius: 5px;
+}
