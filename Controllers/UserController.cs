@@ -69,20 +69,21 @@ public class UserController : Controller
             var userInDb = _context.Users.FirstOrDefault(u => u.Email == newLogUser.LogEmail);
             if(userInDb == null)
             {
-                ModelState.AddModelError("Email","Invalid Email or Password");
+                ModelState.AddModelError("LogEmail","Invalid Email or Password");
+                ViewBag.LogFailure = "There was a problem logging in. Click Login to view errors.";
                 return LogReg();
             }
             var PwHash = new PasswordHasher<LogUser>();
             var result = PwHash.VerifyHashedPassword(newLogUser, userInDb.Password,newLogUser.LogPass);
             if(result == 0 ){
-                ModelState.AddModelError("Email","Invalid Email or Password");
-                ViewBag.LogFailure = "There was a problem logging in \n Click Login to view errors.";
+                ModelState.AddModelError("LogEmail","Invalid Email or Password");
+                ViewBag.LogFailure = "There was a problem logging in. Click Login to view errors.";
                 return LogReg();
             }
             HttpContext.Session.SetInt32("UserID", userInDb.UserID);
             return RedirectToAction("Dashboard");
         }
-        ViewBag.LogFailure = "There was a problem logging in \n Click Login to view errors.";
+        ViewBag.LogFailure = "There was a problem logging in. Click Login to view errors.";
         return LogReg();
     }
 
