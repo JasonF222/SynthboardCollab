@@ -13,7 +13,7 @@
     
 </head>
 <body>
-    <div class="navhead">
+    <div class="navhead text-center">
         <h1 class="welcome">Welcome @Model.UserName</h1>
         <p class="logoutbtn"><a asp-controller="User" asp-action="Logout" class="buttonstyle">Logout</a></p>
     </div>
@@ -27,16 +27,16 @@
     </div>
     <div class="boardContainer">
         <div class="board boardClassic">
-            <p><a asp-controller="Board" asp-action="PlayBoard" asp-route-id="4">Classic</a></p>
+            <p><a asp-controller="Board" asp-action="PlayBoard" asp-route-id="4" class="select-board-text-classic">Classic</a></p>
         </div>
         <div class=" board boardFireStyle">
-            <p><a asp-controller="Board" asp-action="PlayBoard" asp-route-id="2">Fire</a></p>
+            <p><a asp-controller="Board" asp-action="PlayBoard" asp-route-id="2" class="select-board-text-fire">Fire</a></p>
         </div>
         <div class=" board boardWaterStyle">
-            <p><a asp-controller="Board" asp-action="PlayBoard" asp-route-id="1">Water</a></p>
+            <p><a asp-controller="Board" asp-action="PlayBoard" asp-route-id="1" class="select-board-text-water">Water</a></p>
         </div>
         <div class=" board boardSpaceStyle">
-            <p><a asp-controller="Board" asp-action="PlayBoard" asp-route-id="3">Space</a></p>
+            <p><a asp-controller="Board" asp-action="PlayBoard" asp-route-id="3" class="select-board-text-space">Space</a></p>
         </div>
     </div>
     <script src="~/js/dashboardscript.js"></script>
