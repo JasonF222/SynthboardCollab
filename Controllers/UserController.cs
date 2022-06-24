@@ -56,7 +56,7 @@ public class UserController : Controller
             HttpContext.Session.SetInt32("UserID", newUser.UserID);
             return RedirectToAction("Dashboard");
         }
-        ViewBag.RegFailure = "There was a problem registering in \n Click Register to view errors.";
+        ViewBag.RegFailure = "There was a problem registering. Click Register to view errors.";
         return LogReg();
     }
 
