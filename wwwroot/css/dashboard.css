@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Calligraffitti', cursive;
+    font-family: 'Permanent Marker', cursive;
     font-weight: bolder;
 }
 
@@ -99,6 +99,7 @@ body {
 
 .boardClassic {
     animation: flicker 2.5s infinite alternate;
+    font-family: 'Permanent Marker', cursive;
     width: 200px;
     text-align: center;
     animation-delay: 0.75s;
@@ -116,7 +117,7 @@ body {
     transform: scale(1);
     transition-duration: 1s;
     
-    border: 0.2rem solid white;
+    border: 7px solid white;
     border-radius: 5px;
     padding: 15px;
     box-shadow: 0 0 .2rem #fff,
@@ -128,14 +129,15 @@ body {
 }
 
 .boardClassic:hover {
+    font-family: 'Permanent Marker', cursive;
     transform: scale(1.2);
     transition-duration: 1s;
     width: 200px;
     text-align: center;
-    color: white;
+    color: rgb(0, 190, 0);
     opacity: 1;
     cursor: pointer;
-    border: 0.2rem solid #fff;
+    border: 7px solid #fff;
     border-radius: 2rem;
     box-shadow: 0 0 .2rem #fff,
         0 0 .2rem #fff,
@@ -192,7 +194,7 @@ body {
         0 0 151px yellow;
     transform: scale(1);
     transition-duration: 1s;
-    border: 0.2rem solid white;
+    border: 7px solid white;
     border-radius: 5px;
     padding: 15px;
     box-shadow: 0 0 .2rem #fff,
@@ -208,10 +210,10 @@ body {
     transition-duration: 1s;
     width: 200px;
     text-align: center;
-    color: white;
+    color: orangered;
     opacity: 1;
     cursor: pointer;
-    border: 0.2rem solid #fff;
+    border: 7px solid #fff;
     border-radius: 2rem;
     box-shadow: 0 0 .2rem #fff,
         0 0 .2rem #fff,
@@ -267,7 +269,7 @@ body {
         0 0 151px aqua;
     transform: scale(1);
     transition-duration: 1s;
-    border: 0.2rem solid white;
+    border: 7px solid white;
     border-radius: 5px;
     padding: 15px;
     box-shadow: 0 0 .2rem #fff,
@@ -283,10 +285,10 @@ body {
     transition-duration: 1s;
     width: 200px;
     text-align: center;
-    color: white;
+    color: steelblue;
     opacity: 1;
     cursor: pointer;
-    border: 0.2rem solid #fff;
+    border: 7px solid #fff;
     border-radius: 2rem;
     box-shadow: 0 0 .2rem #fff,
         0 0 .2rem #fff,
@@ -343,7 +345,7 @@ body {
         0 0 151px blueviolet;
     transform: scale(1);
     transition-duration: 1s;
-    border: 0.2rem solid white;
+    border: 7px solid white;
     border-radius: 5px;
     padding: 15px;
     box-shadow: 0 0 .2rem #fff,
@@ -359,10 +361,10 @@ body {
     transition-duration: 1s;
     width: 200px;
     text-align: center;
-    color: white;
+    color: rgb(154, 34, 179);
     opacity: 1;
     cursor: pointer;
-    border: 0.2rem solid #fff;
+    border: 7px solid #fff;
     border-radius: 2rem;
     box-shadow: 0 0 .2rem #fff,
         0 0 .2rem #fff,
@@ -401,7 +403,7 @@ body {
 
 /* rain */
 
-.rain-container {
+.rain-div {
     position: absolute;
     z-index: -2;
     background: #000;

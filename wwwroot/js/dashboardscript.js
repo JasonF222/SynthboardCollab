@@ -1,4 +1,4 @@
-const rainContainer = document.querySelector(".rain-container");
+const rainDiv = document.querySelector(".rain-div");
 
 // background Colors for the raindrop
 const background = [
@@ -10,11 +10,10 @@ const background = [
 ];
 
 const amount = 65; // amount of raindops
-let i = 0;
 let drop, raindropProperties;
 
-// Looping and creating the raindrop then adding to the rainContainer
-while (i < amount) {
+// Looping and creating the raindrop then adding to the rainDiv
+for (let i = 0; i < amount; i++) {
     drop = document.createElement("i");
 
     //   CSS Properties for raindrop
@@ -36,6 +35,5 @@ while (i < amount) {
     drop.style.opacity = raindropProperties.opacity;
 
     //   Appending the raindrop in the raindrop container
-    rainContainer.appendChild(drop);
-    i++;
+    rainDiv.appendChild(drop);
 }
