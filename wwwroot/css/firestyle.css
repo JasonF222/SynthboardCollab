@@ -23,7 +23,7 @@ body {
 h1 {
     margin-top: 10px;
     font-size: 48pt;
-    background: -webkit-linear-gradient(top, rgb(0, 190, 0), lightgreen);
+    background: -webkit-linear-gradient(top, orangered, orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -33,7 +33,7 @@ h1 {
     width: 50px;
     height: 50px;
     font-family: 'Permanent Marker', cursive;
-    border: 3px solid greenyellow;
+    border: 3px solid orangered;
     background-color: black;
     border-radius: 50%;
     box-shadow: 0 0 15px whitesmoke;
@@ -44,7 +44,7 @@ h1 {
     width: 370px;
     height: 200px;
     padding: 5px;
-    border: 3px solid greenyellow;
+    border: 3px solid orangered;
     position: fixed;
     z-index: 3;
     left: 2vw;
@@ -61,11 +61,11 @@ h1 {
 .direction-important {
     font-family: 'Permanent Marker', cursive;
     font-size: 14pt;
-    color: greenyellow;
+    color: orangered;
 }
 
 .dashbtn {
-    color: greenyellow;
+    color: orange;
 }
 
 .dashbtn:hover {
@@ -73,7 +73,7 @@ h1 {
 }
 
 .logbtn {
-    color: greenyellow;
+    color: orange;
 }
 
 .logbtn:hover {
@@ -103,18 +103,18 @@ h1 {
 
 .keyboardKey {
     font-family: 'Permanent Marker', cursive;
-    color: rgb(0, 190, 0);
+    color: orangered;
     font-size: 45pt;
     animation: pulsate 1s ease-in-out infinite alternate;
     text-shadow:
     0 0 7px #fff,
     0 0 10px #fff,
     0 0 21px #fff,
-    0 0 42px greenyellow,
-    0 0 82px greenyellow,
-    0 0 92px greenyellow,
-    0 0 102px greenyellow,
-    0 0 151px greenyellow;
+    0 0 42px orange,
+    0 0 82px orange,
+    0 0 92px orange,
+    0 0 102px orange,
+    0 0 151px orange;
 }
 
 @keyframes pulsate {
@@ -123,8 +123,8 @@ h1 {
         0 0 4px #fff,
         0 0 11px #fff,
         0 0 19px #fff,
-        0 0 40px greenyellow,
-        0 0 150px greenyellow;
+        0 0 40px orange,
+        0 0 150px orange;
     }
     0% {
     text-shadow:
@@ -141,7 +141,7 @@ h1 {
 .mrsynthkey {
     height: 10vw;
     width: 10vw;
-    border: 3px solid white;
+    border: 3px solid orangered;
     background-color: black;
 }
 
@@ -173,7 +173,7 @@ h1 {
     border-radius: 50%;
     height: 50px;
     width: 50px;
-    border: 3px solid greenyellow;
+    border: 3px solid orangered;
     box-shadow: 0 0 15px whitesmoke;
     background-color: black;
     transition-duration: 1s;
@@ -209,27 +209,27 @@ body {
 	top: 0;
 	width: 100%;
 	height: 55%;
-	background: linear-gradient( black 45%, greenyellow );
+	background: linear-gradient( black 75%, orangered );
 }
 
 /* Sun */
 #classic-board-sunWrap {
 	position: relative;
-	width: 40%;
+	width: 30%;
 	margin-bottom: -15%;
 }
 #classic-board-sun {
-	--glow-color: greenyellow;
-	padding-top: 100%;
+	--glow-color: orangered;
+	padding-top: 60%;
 	border-radius: 50%;
-    border: 2px solid greenyellow;
-	background-image: linear-gradient( black, black, greenyellow,  greenyellow, black 50% );
+    border: 2px solid orangered;
+	background-image: linear-gradient( black, orangered,  orangered, black 80% );
 	box-shadow: 0 0 160px 80px var( --glow-color );
 	animation: 2s ease infinite alternate classic-board-sun-glow-anim;
 }
 @keyframes classic-board-sun-glow-anim {
-	from { box-shadow: 0 0 160px 80px var( --glow-color ); }
-	to   { box-shadow: 0 0 200px 95px var( --glow-color ); }
+	from { box-shadow: 0 0 160px 80px red; }
+	to   { box-shadow: 0 0 200px 95px orangered; }
 }
 
 /* Stars */
@@ -243,7 +243,7 @@ body {
 	border-radius: 50%;
 	width: 2px;
 	height: 2px;
-	background-color: #fff;
+	background-color: orange;
 }
 
 /* Mountains */
@@ -268,7 +268,7 @@ body {
 	width: 100%;
 	height: 45%;
 	bottom: 0;
-	border-top: 2px solid whitesmoke;
+	border-top: 2px solid red;
 	background-color: #000;
 }
 
@@ -291,7 +291,7 @@ body {
 	width: 100%;
 	height: 100%;
 	transform-origin: top center;
-	animation: .95s linear infinite classic-board-lines-anim;
+	animation: .5s linear infinite classic-board-lines-anim;
 }
 .classic-board-shutdown #classic-board-lines {
 	animation-duration: 5s;
@@ -315,7 +315,7 @@ body {
 .classic-board-vline {
 	width: 100%;
 	height: 100%;
-	background-color: greenyellow;
+	background-color: orangered;
 }
 .classic-board-hline { height: 3px; }
 .classic-board-vline { width: 3px; }
