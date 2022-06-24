@@ -28,6 +28,7 @@ public class User
     [Display(Name = "Confirm Password")]
     public string ConfirmPassword {get; set;}
 
+    public List<SoundFile> SavedSounds {get; set;} = new List<SoundFile>();
     public DateTime CreatedAt {get; set;} = DateTime.Now;
     public DateTime UpdatedAt {get; set;} = DateTime.Now;
 
