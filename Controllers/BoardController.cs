@@ -13,36 +13,6 @@ public class BoardController : Controller
     }
 
     [HttpGet]
-    [Route("board/play")]
-    public IActionResult PlayBoard(int id)
-    {
-        int? UID = HttpContext.Session.GetInt32("UserID");
-        if(UID == null)
-        {
-            ViewBag.NotLogged = "You must Login or Register to view content.";
-            return RedirectToAction("LogReg", "User");
-        }
-        Board? oneBoard = _context.Boards.FirstOrDefault(b => b.BoardID == id);
-        if(oneBoard == null)
-        {
-            return RedirectToAction("Classic");
-        }
-        if(oneBoard.Name == "Space")
-        {
-            return RedirectToAction("Space");
-        }
-        if(oneBoard.Name == "Fire")
-        {
-            return RedirectToAction("Fire");
-        }
-        if(oneBoard.Name == "Water")
-        {
-            return RedirectToAction("Water");
-        }
-        return RedirectToAction("Classic");
-    }   
-
-    [HttpGet]
     [Route("/boards/space")]
     public IActionResult Space()
     {
