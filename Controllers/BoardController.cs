@@ -42,6 +42,8 @@ public class BoardController : Controller
         return RedirectToAction("Classic");
     }   
 
+    [HttpGet]
+    [Route("/boards/space")]
     public IActionResult Space()
     {
         int? UID = HttpContext.Session.GetInt32("UserID");
@@ -52,6 +54,9 @@ public class BoardController : Controller
         }
         return View();
     }
+
+    [HttpGet]
+    [Route("/boards/water")]
 
     public IActionResult Water()
     {
@@ -64,6 +69,8 @@ public class BoardController : Controller
         return View();
     }
 
+    [HttpGet]
+    [Route("/boards/fire")]
     public IActionResult Fire()
     {
         int? UID = HttpContext.Session.GetInt32("UserID");
