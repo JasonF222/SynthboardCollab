@@ -75,7 +75,9 @@ public class BoardController : Controller
         return View();
     }
 
-public IActionResult Classic()
+    [HttpGet]
+    [Route("/boards/classic")]
+    public IActionResult Classic()
     {
         int? UID = HttpContext.Session.GetInt32("UserID");
         if(UID == null)

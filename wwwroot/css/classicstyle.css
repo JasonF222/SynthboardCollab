@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Calligraffitti', cursive;
+}
+
+.text-center {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+}
+
+body {
+    background: black;
+    color: whitesmoke;
+    height: 100%;
+    overflow: hidden;
+}
+
+.flexCol1 {
+    flex: 1;
+}
+
+h1 {
+    margin-top: 10px;
+    font-size: 48pt;
+    background: -webkit-linear-gradient(top, rgb(0, 190, 0), lightgreen);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.directionbtn {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    font-family: 'Permanent Marker', cursive;
+    border: 3px solid greenyellow;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 15px whitesmoke;
+    z-index: 2;
+}
+
+.directionBox {
+    width: 370px;
+    height: 200px;
+    padding: 5px;
+    border: 3px solid greenyellow;
+    position: fixed;
+    z-index: 3;
+    left: 2vw;
+    top: 5vw;
+    transform: scaleY(0);
+    transition-duration: 1s;
+}
+
+.directiontxt {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 14pt;
+}
+
+.direction-important {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 14pt;
+    color: greenyellow;
+}
+
+.dashbtn {
+    color: greenyellow;
+}
+
+.dashbtn:hover {
+    color: white;
+}
+
+.logbtn {
+    color: greenyellow;
+}
+
+.logbtn:hover {
+    color: white;
+}
+
+.dashlogbtns {
+    text-decoration: none;
+    font-family: 'Permanent Marker', cursive;
+    text-align: right;
+    font-size: 12pt;
+}
+
+.currentBoard {
+    margin-top: 5px;
+    font-size: 20pt;
+    background: -webkit-linear-gradient(top, whitesmoke, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.keyText {
+    font-size: 20pt;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.keyboardKey {
+    font-family: 'Permanent Marker', cursive;
+    color: rgb(0, 190, 0);
+    font-size: 45pt;
+    animation: pulsate 1s ease-in-out infinite alternate;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px greenyellow,
+    0 0 82px greenyellow,
+    0 0 92px greenyellow,
+    0 0 102px greenyellow,
+    0 0 151px greenyellow;
+}
+
+@keyframes pulsate {
+    100% {
+    text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px greenyellow,
+        0 0 150px greenyellow;
+    }
+    0% {
+    text-shadow:
+        0 0 4px #fff,
+        0 0 10px #fff,
+        0 0 18px #fff,
+        0 0 38px black,
+        0 0 73px black,
+        0 0 80px black,
+        0 0 140px black;
+    }
+}
+
+.mrsynthkey {
+    height: 10vw;
+    width: 10vw;
+    border: 3px solid white;
+    background-color: black;
+}
+
+.keyrow {
+    margin-left: 2%;
+    margin-right: 2%;
+    gap: 20px;
+    position: fixed;
+    z-index: 2;
+    bottom: 10px;
+}
+
+.slider-div {
+    position: fixed;
+    bottom: 22.5%;
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    border: 3px solid white;
+    z-index: 1;
+}
+
+.slider-ball {
+    z-index: 2;
+    text-align: center;
+    margin-left: 22px;
+    position: fixed;
+    bottom: 22%;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: 3px solid greenyellow;
+    box-shadow: 0 0 15px whitesmoke;
+    background-color: black;
+    transition-duration: 1s;
+}
+
+.slider-ball-text {
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    line-height: 40px;
+}
+
+/* Classic Board BG */
+
+html,
+body {
+	margin: 0;
+	height: 100%;
+}
+
+#classic-board {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	background-color: #000;
+}
+
+/* Sky */
+#classic-board-sky {
+	position: absolute;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	top: 0;
+	width: 100%;
+	height: 55%;
+	background: linear-gradient( black 75%, greenyellow );
+}
+
+/* Sun */
+#classic-board-sunWrap {
+	position: relative;
+	width: 40%;
+	margin-bottom: -15%;
+}
+#classic-board-sun {
+	--glow-color: greenyellow;
+	padding-top: 100%;
+	border-radius: 50%;
+    border: 2px solid greenyellow;
+	background-image: linear-gradient( black, black,  greenyellow, black 50% );
+	box-shadow: 0 0 160px 80px var( --glow-color );
+	animation: 2s ease infinite alternate classic-board-sun-glow-anim;
+}
+@keyframes classic-board-sun-glow-anim {
+	from { box-shadow: 0 0 160px 80px var( --glow-color ); }
+	to   { box-shadow: 0 0 200px 95px var( --glow-color ); }
+}
+
+/* Stars */
+#classic-board-stars {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.classic-board-star {
+	position: absolute;
+	border-radius: 50%;
+	width: 2px;
+	height: 2px;
+	background-color: #fff;
+}
+
+/* Mountains */
+#classic-board-mountains {
+	position: absolute;
+	width: 100%;
+	height: 30%;
+}
+.classic-board-mountain {
+	position: absolute;
+	width: 30%;
+	height: 100%;
+	background-image: linear-gradient( #000 70%, #111 85%, #fff1 );
+}
+#classic-board-mountains-left { left: 0; clip-path: polygon( 0% 100%,0% 55%,5% 60%,10% 55%,20% 50%,25% 42%,30% 38%,33% 35%,40% 45%,50% 50%,60% 70%,70% 85%,75% 82%,80% 91%,85% 90%,90% 95%,95% 98%,100% 100% ); }
+#classic-board-mountains-right { right: 0; clip-path: polygon( 0% 100%,5% 95%,10% 85%,15% 87%,20% 80%,25% 78%,30% 65%,40% 70%,50% 57%,60% 53%,67% 68%,70% 70%,75% 66%,80% 55%,90% 50%,95% 60%,100% 57%,100% 100% ); }
+
+/* Ground */
+#classic-board-ground {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 45%;
+	bottom: 0;
+	border-top: 2px solid whitesmoke;
+	background-color: #000;
+}
+
+#classic-board-groundShadow {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient( #000 0%, transparent );
+}
+
+/* Floor Lines */
+#classic-board-linesWrap {
+	height: 100%;
+	perspective: 1000px;
+	perspective-origin: center top;
+}
+#classic-board-lines {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform-origin: top center;
+	animation: .95s linear infinite classic-board-lines-anim;
+}
+.classic-board-shutdown #classic-board-lines {
+	animation-duration: 5s;
+}
+@keyframes classic-board-lines-anim {
+	from { transform: rotateX( 84deg ) translateY( 0 ); }
+	to { transform: rotateX( 84deg ) translateY( 100px ); }
+}
+#classic-board-hlines,
+#classic-board-vlines {
+	position: absolute;
+	left: calc( ( 900% - 100% ) / -2 );
+	width: 900%;
+	height: 500%;
+}
+#classic-board-vlines {
+	display: flex;
+	justify-content: center;
+}
+.classic-board-hline,
+.classic-board-vline {
+	width: 100%;
+	height: 100%;
+	background-color: greenyellow;
+}
+.classic-board-hline { height: 3px; }
+.classic-board-vline { width: 3px; }
+.classic-board-hline + .classic-board-hline { margin-top: 98px; }
+.classic-board-vline + .classic-board-vline { margin-left: 48px; }
