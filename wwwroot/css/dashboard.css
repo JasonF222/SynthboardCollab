@@ -28,7 +28,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-    text-align: center;
     width: 400px;
     text-overflow: wrap;
 }
@@ -59,14 +58,6 @@ body {
     margin-top: 6%;
 }
 
-/* img {
-    margin-top: -4.5vw;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    position: absolute;
-} */
-
 .board {
     font-size: 32pt;
 }
@@ -90,11 +81,48 @@ body {
         0 0 10px #fff,
         0 0 21px #fff,
         0 0 42px white;
-        /* 0 0 82px hotpink, */
-        /* 0 0 92px white,
-        0 0 102px white,
-        0 0 151px white; */
 }
+
+.select-board-text-classic {
+    text-decoration: none;
+    color: black;
+}
+
+.select-board-text-classic:hover {
+    text-decoration: none;
+    color: rgb(0, 190, 0);
+}
+
+.select-board-text-fire {
+    text-decoration: none;
+    color: black;
+}
+
+.select-board-text-fire:hover {
+    text-decoration: none;
+    color: orangered;
+}
+
+.select-board-text-water {
+    text-decoration: none;
+    color: black;
+}
+
+.select-board-text-water:hover {
+    text-decoration: none;
+    color: steelblue;
+}
+
+.select-board-text-space {
+    text-decoration: none;
+    color: black;
+}
+
+.select-board-text-space:hover {
+    text-decoration: none;
+    color: rgb(154, 34, 179);
+}
+
 /* Classic Board */
 
 .boardClassic {
@@ -174,7 +202,7 @@ body {
     }
 }
 
-/* Fire Style */
+/* Fire Board */
 
 .boardFireStyle {
     animation: fire-flicker 2.5s infinite alternate;
@@ -250,7 +278,7 @@ body {
     }
 }
 
-/* Water Style */
+/* Water Board */
 
 .boardWaterStyle {
     animation: water-flicker 2.5s infinite alternate;
@@ -325,7 +353,7 @@ body {
     }
 }
 
-/* Space Style */
+/* Space Board */
 
 .boardSpaceStyle {
     animation: space-flicker 2.5s infinite alternate;
