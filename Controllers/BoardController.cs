@@ -66,3 +66,4 @@ public class BoardController : Controller
     }
     
 }
+testy westy
