@@ -30,6 +30,7 @@ Migrations/
 # Web publish log #
 ###################
 *.Publish.xml
+publish/
 #############
 # Resharper #
 #############
