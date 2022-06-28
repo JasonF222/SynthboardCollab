@@ -3,13 +3,21 @@
 document.addEventListener("keydown", button1Pressed, true);
 document.addEventListener("keyup", button1Released, true);
 
+let record = false;
 let pitchValue = "mid";
 let sliderValue = 1;
-let startTime = new Date();
 var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
 let timeLine = [];
-let m ={};
-m["keyCode"] = 69;
+let startTime = null;
+
+class ReplayNode {
+    constructor (){
+        this.time = null;
+        this.keyCode = null;
+        this.pressRelease = null;
+    }
+}
+
 
 
 var synthKeyElements = {
@@ -77,10 +85,16 @@ var synthKeyElements = {
 };
 
 function button1Pressed(e) {
-    timeLine.push("keydown" + e.keyCode);
-    let endTime = new Date();
-    var timeDiff = (endTime - startTime) / 1000;
-    timeLine.push(timeDiff);
+    if(record){
+        let eventRecord =  new ReplayNode();
+        eventRecord.keyCode = e.keyCode;
+        let endTime = new Date();
+        var timeDiff = (endTime - startTime);    
+        eventRecord.time = timeDiff;
+        eventRecord.pressRelease = true;
+        timeLine.push(eventRecord);
+    }
+    
     if(e.keyCode == 32) {
         pitchValue = "mid";
         moveSlider(1);
@@ -102,10 +116,15 @@ function button1Pressed(e) {
 }
 
 function button1Released(e) {
-    timeLine.push("keyup" + e.keyCode);
-    let endTime = new Date();
-    var timeDiff = (endTime - startTime) / 1000;
-    timeLine.push(timeDiff);
+    if(record){
+        let eventRecord =  new ReplayNode();
+        eventRecord.keyCode = e.keyCode;
+        let endTime = new Date();
+        var timeDiff = (endTime - startTime);    
+        eventRecord.time = timeDiff;
+        eventRecord.pressRelease = false;
+        timeLine.push(eventRecord);
+    }
     if(e.keyCode == 32) {
         return;
     }
@@ -118,7 +137,6 @@ function button1Released(e) {
     OnOscillatorStop(e.keyCode);
     var synthKey = document.getElementById(synthKeyElements[e.keyCode].elementReference);
     keyChangerUp(synthKey);
-    console.log(timeLine);
 }
 
 var oscillatorDictionary = {};
@@ -206,4 +224,42 @@ function directionBoxHide() {
     let divGrab = document.getElementById("directionBox");
     divGrab.style.transform = "scaleY(0)";
     divGrab.style.transitionDuration = "1s";
+}
+
+function playBack(playBackArr){
+    pitchValue = "mid";
+    console.log("playing back");
+    console.log(playBackArr);
+    var i = 0;
+    return playRecur(playBackArr, i);
+}
+
+function playRecur(arr, i){
+    if(i < arr.length){
+        console.log("playing");
+        if(arr[i].pressRelease === true){
+            setTimeout(() => {
+                button1Pressed(arr[i])
+            }, arr[i].time);
+        }
+        if(arr[i].pressRelease === false){
+            setTimeout(() => {
+                button1Released(arr[i])
+            }, arr[i].time);
+        }
+        return playRecur(arr, i+1);
+    }
+}
+
+
+function startRecording(){
+    record = true;
+    startTime = new Date();
+    return "Recording Started";
+}
+
+function endRecording(){
+    record = false;
+    // popout form to save recording
+    return "Recording ended"; 
 }
