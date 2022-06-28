@@ -5,8 +5,12 @@ document.addEventListener("keyup", button1Released, true);
 
 let pitchValue = "mid";
 let sliderValue = 1;
-
+let startTime = new Date();
 var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
+let timeLine = [];
+let m ={};
+m["keyCode"] = 69;
+
 
 var synthKeyElements = {
     81 : {
@@ -73,27 +77,48 @@ var synthKeyElements = {
 };
 
 function button1Pressed(e) {
+    timeLine.push("keydown" + e.keyCode);
+    let endTime = new Date();
+    var timeDiff = (endTime - startTime) / 1000;
+    timeLine.push(timeDiff);
     if(e.keyCode == 32) {
         pitchValue = "mid";
         moveSlider(1);
+        return;
     }
     if(e.keyCode == 16) {
         pitchValue = "high";
         moveSlider(2);
+        return;
     }
     if(e.keyCode == 17) {
         pitchValue = "low";
         moveSlider(0);
+        return;
     }
     OnOscillatorStart(e.keyCode);
     var synthKey = document.getElementById(synthKeyElements[e.keyCode].elementReference);
-    keyChangerDown(synthKey);
+    keyChangerDown(synthKey);    
 }
 
 function button1Released(e) {
+    timeLine.push("keyup" + e.keyCode);
+    let endTime = new Date();
+    var timeDiff = (endTime - startTime) / 1000;
+    timeLine.push(timeDiff);
+    if(e.keyCode == 32) {
+        return;
+    }
+    if(e.keyCode == 16) {
+        return;
+    }
+    if(e.keyCode == 17) {
+        return;
+    }
     OnOscillatorStop(e.keyCode);
     var synthKey = document.getElementById(synthKeyElements[e.keyCode].elementReference);
     keyChangerUp(synthKey);
+    console.log(timeLine);
 }
 
 var oscillatorDictionary = {};
