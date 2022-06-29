@@ -9,6 +9,7 @@ let sliderValue = 1;
 var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
 let timeLine = [];
 let startTime = null;
+let pitchStarter = null;
 
 class ReplayNode {
     constructor (){
@@ -227,8 +228,16 @@ function directionBoxHide() {
 }
 
 function playBack(playBackArr){
-    pitchValue = "mid";
-    console.log("playing back");
+    pitchValue = pitchStarter;
+    if(pitchValue == "mid"){
+        moveSlider(1);
+    }
+    if(pitchValue == "low"){
+        moveSlider(0);
+    }
+    if(pitchValue == "high"){
+        moveSlider(2);
+    }
     console.log(playBackArr);
     var i = 0;
     return playRecur(playBackArr, i);
@@ -255,6 +264,7 @@ function playRecur(arr, i){
 function startRecording(){
     record = true;
     startTime = new Date();
+    pitchStarter = pitchValue;
     return "Recording Started";
 }
 
