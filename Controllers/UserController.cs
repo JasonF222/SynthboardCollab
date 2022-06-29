@@ -34,6 +34,12 @@ public class UserController : Controller
             ViewBag.NotLogged = "You must Login or Register to view content.";
             return RedirectToAction("LogReg");
         }
+        int userID = Convert.ToInt32(UID);
+        List<SoundFile> userRecordings = _context.Sounds.Where(s => s.UserID == userID).ToList();
+        if(userRecordings.Count() > 9)
+        {
+            ViewBag.Limit = "You have the maximum number of recordings. Please delete one to add new recordings.";
+        }
         User? oneUser = _context.Users.FirstOrDefault(u => u.UserID == UID);
         return View("Dashboard", oneUser);
     }
@@ -121,6 +127,10 @@ public class UserController : Controller
         }
         int userID = Convert.ToInt32(UID);
         List<SoundFile> userRecordings = _context.Sounds.Where(s => s.UserID == userID).ToList();
+        if(userRecordings.Count() > 9)
+        {
+            ViewBag.Limit = "You have the maximum number of recordings. Please delete one to add new recordings.";
+        }
         return View("Recordings", userRecordings);
     }
 
