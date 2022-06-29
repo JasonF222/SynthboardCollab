@@ -1,15 +1,13 @@
-// FunkyTown: A A G A  EE A D C A //
+const timeLine = document.getElementById("PlayBackArray").innerText;
 
-document.addEventListener("keydown", button1Pressed, true);
-document.addEventListener("keyup", button1Released, true);
 
 let record = false;
 let pitchValue = "mid";
 let sliderValue = 1;
 var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
-let timeLine = [];
 let startTime = null;
 let pitchStarter = null;
+let oscType = "sawtooth";
 
 class ReplayNode {
     constructor (){
@@ -156,7 +154,7 @@ function OnOscillatorStart(key) {
 
     gainNode.gain.value = 0.02;
     oscillator.frequency.value = GetFrequency(key);
-    oscillator.type = "sawtooth";
+    oscillator.type = oscType;
     oscillatorDictionary[key] = oscillator;
     oscillatorDictionary[key].start();
 }
@@ -258,28 +256,4 @@ function playRecur(arr, i){
         }
         return playRecur(arr, i+1);
     }
-}
-
-
-function startRecording(){
-    record = true;
-    startTime = new Date();
-    pitchStarter = pitchValue;
-    return "Recording Started";
-}
-
-function endRecording(){
-    record = false;
-    saveRecording(timeLine);
-    return "Recording ended"; 
-}
-
-let someDiv = document.getElementById("AddPath");
-
-function saveRecording(keyPath){
-    someDiv.innerHTML=
-    `
-    <input asp-for="KeyPath" value="${keyPath}">
-    `
-    // transform div to exist
 }

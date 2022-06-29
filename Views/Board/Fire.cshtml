@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+@model SoundFile
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,8 +83,16 @@
         </div>
     </div>
 
+
     <div class="sliderContainer d-flex justify-content-center">
         <div class="slider-div">
+            <div id="RecordForm" class="">
+                <form asp-controller="Board" asp-action="SaveSound" method="post">
+                    <div id="AddPath"></div>
+                    <input asp-for="Name">
+                    <button type="submit" class="mb-5">Save Recording</button>
+                </form>
+            </div>
             <div class="slider-ball" id="slider-ball">
                 <p class="slider-ball-text">Mid</p>
             </div>

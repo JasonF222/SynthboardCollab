@@ -94,4 +94,18 @@ public class UserController : Controller
         HttpContext.Session.Clear();
         return RedirectToAction("LogReg");
     }
+
+    [HttpGet]
+    [Route("/user/recordings/play/{id}")]
+    public IActionResult PlayRecording(int id)
+    {
+        int? UID = HttpContext.Session.GetInt32("UserID");
+        if(UID == null)
+        {
+            ViewBag.NotLogged = "You must Login or Register to view content.";
+            return RedirectToAction("LogReg", "User");
+        }
+        SoundFile? oneRecord = _context.Sounds.FirstOrDefault(s => s.SoundFileID == id);
+        return View("Playback", oneRecord);
+    }
 }
