@@ -1,2 +1,15 @@
-@model SoundFile
+@model List<SoundFile>
 
+
+<h1 class="text-center">My Recordings</h1>
+<div class="recordingCont">
+    @{
+        @if(Model.Count > 0)
+        {
+            @foreach (var one in Model)
+            {
+                <p>View<a asp-action="PlayRecording" asp-controller="User" asp-route-id="@one.SoundFileID"> @one.Name</a></p>
+            }
+        }
+    }
+</div>

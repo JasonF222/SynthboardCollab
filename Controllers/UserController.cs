@@ -108,4 +108,33 @@ public class UserController : Controller
         SoundFile? oneRecord = _context.Sounds.FirstOrDefault(s => s.SoundFileID == id);
         return View("Playback", oneRecord);
     }
+
+    [HttpGet]
+    [Route("/user/recordings")]
+    public IActionResult Recordings()
+    {
+        int? UID = HttpContext.Session.GetInt32("UserID");
+        if(UID == null)
+        {
+            ViewBag.NotLogged = "You must Login or Register to view content.";
+            return RedirectToAction("LogReg");
+        }
+        int userID = Convert.ToInt32(UID);
+        List<SoundFile> userRecordings = _context.Sounds.Where(s => s.UserID == userID).ToList();
+        return View("Recordings", userRecordings);
+    }
+
+    [HttpGet]
+    [Route("/user/recordings/delete/{id}")]
+    public IActionResult DeleteRecording(int id)
+    {
+        SoundFile? oneRecord = _context.Sounds.FirstOrDefault(s => s.SoundFileID == id);
+        if(oneRecord != null)
+        {
+            _context.Remove(oneRecord);
+            _context.SaveChanges();
+            return RedirectToAction("Dashboard");
+        }
+        return RedirectToAction("Recordings");
+    }
 }

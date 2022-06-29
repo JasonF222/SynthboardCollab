@@ -256,3 +256,7 @@ function playRecur(arr, i){
         return playRecur(arr, i+1);
     }
 }
+
+function selectStyle(newWave){
+    oscType = newWave
+}
