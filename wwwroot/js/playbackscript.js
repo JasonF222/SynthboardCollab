@@ -1,15 +1,14 @@
 const savedSound = document.getElementById("PlayBackArray").innerText;
 
+var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
+
 let timeLine = JSON.parse(savedSound);
-
-
 let record = false;
 let pitchValue = "mid";
 let sliderValue = 1;
-var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
 let startTime = null;
 let pitchStarter = null;
-let oscType = "sawtooth";
+let oscType = "triangle";
 
 class ReplayNode {
     constructor (){
@@ -18,8 +17,6 @@ class ReplayNode {
         this.pressRelease = null;
     }
 }
-
-
 
 var synthKeyElements = {
     81 : {

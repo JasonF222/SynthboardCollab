@@ -3,14 +3,14 @@
 document.addEventListener("keydown", button1Pressed, true);
 document.addEventListener("keyup", button1Released, true);
 
+var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
+
 let pitchValue = "mid";
 let sliderValue = 1;
 let record = false;
 let timeLine = [];
 let startTime = null;
 let pitchStarter = null;
-
-var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
 
 class ReplayNode {
     constructor (){
@@ -85,6 +85,16 @@ var synthKeyElements = {
 };
 
 function button1Pressed(e) {
+    if(record){
+        let eventRecord =  new ReplayNode();
+        eventRecord.keyCode = e.keyCode;
+        let endTime = new Date();
+        var timeDiff = (endTime - startTime);    
+        eventRecord.time = timeDiff;
+        eventRecord.pressRelease = true;
+        timeLine.push(eventRecord);
+    }
+
     if(e.keyCode == 32) {
         pitchValue = "mid";
         moveSlider(1);
@@ -103,6 +113,24 @@ function button1Pressed(e) {
 }
 
 function button1Released(e) {
+    if(record){
+        let eventRecord =  new ReplayNode();
+        eventRecord.keyCode = e.keyCode;
+        let endTime = new Date();
+        var timeDiff = (endTime - startTime);    
+        eventRecord.time = timeDiff;
+        eventRecord.pressRelease = false;
+        timeLine.push(eventRecord);
+    }
+    if(e.keyCode == 32) {
+        return;
+    }
+    if(e.keyCode == 16) {
+        return;
+    }
+    if(e.keyCode == 17) {
+        return;
+    }
     OnOscillatorStop(e.keyCode);
     var synthKey = document.getElementById(synthKeyElements[e.keyCode].elementReference);
     keyChangerUp(synthKey);
@@ -195,6 +223,7 @@ function directionBoxHide() {
 
 function playBack(playBackArr){
     pitchValue = pitchStarter;
+    var i = 0;
     if(pitchValue == "mid"){
         moveSlider(1);
     }
@@ -204,14 +233,11 @@ function playBack(playBackArr){
     if(pitchValue == "high"){
         moveSlider(2);
     }
-    console.log(playBackArr);
-    var i = 0;
     return playRecur(playBackArr, i);
 }
 
 function playRecur(arr, i){
     if(i < arr.length){
-        console.log("playing");
         if(arr[i].pressRelease === true){
             setTimeout(() => {
                 button1Pressed(arr[i])
@@ -226,7 +252,6 @@ function playRecur(arr, i){
     }
 }
 
-
 function startRecording(){
     record = true;
     startTime = new Date();
@@ -236,9 +261,7 @@ function startRecording(){
 
 function endRecording(){
     record = false;
-    console.log(timeLine);
     let keyPath = JSON.stringify(timeLine);
-    console.log(keyPath);
     saveRecording(keyPath);
     return "Recording ended"; 
 }
@@ -246,11 +269,16 @@ function endRecording(){
 let someDiv = document.getElementById("AddPath");
 
 function saveRecording(keyPath){
-    console.log(keyPath);
+    const divGrabber = document.querySelector(".recordSaveFormBox");
     someDiv.setAttribute("value", keyPath);
-    // transform div to exist
+    if(timeLine.length > 0){
+        divGrabber.style.transform = "scaleY(1)";
+    }
+    return;
 }
 
 function clearRecording(){
+    const divGrabber = document.querySelector(".recordSaveFormBox");
     timeLine = [];
+    divGrabber.style.transform = "scaleY(0)";
 }

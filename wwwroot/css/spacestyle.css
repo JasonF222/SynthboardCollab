@@ -364,3 +364,142 @@ body {
 .classic-board-vline { width: 3px; }
 .classic-board-hline + .classic-board-hline { margin-top: 98px; }
 .classic-board-vline + .classic-board-vline { margin-left: 48px; }
+
+/* Recording CSS */
+
+.recordText {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.recordHeaderText {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20pt;
+}
+
+.recordContainer {
+    position: fixed;
+    z-index: 5;
+    bottom: 10vw;
+    margin-left: 0.5vw;
+}
+
+.recordHeader {
+    position: fixed;
+    z-index: 5;
+    bottom: 14vw;
+    margin-left: 2vw;
+}
+
+.buttonContainer {
+    width: 250px;
+    border: 2px solid white;
+    background-color: black;
+    padding: 5px;
+    position: fixed;
+    z-index: 5;
+    bottom: 12vw;
+    margin-left: 2vw;
+    margin-right: 45vw;
+}
+
+.btnmenu {
+    width: 40px;
+    height: 40px;
+}
+
+.recordButtonBox {
+    cursor: pointer;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, yellow, greenyellow);
+    border: 1px solid black;
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+.recordButtonBox:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+.stopButtonBox {
+    cursor: pointer;
+    background-image: linear-gradient(to top, red, salmon);
+    border: 1px solid black;
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+.stopButtonBox:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+.previewButtonBox {
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid skyblue;
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+.previewButtonBox:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    border-left: 30px solid lightskyblue;
+}
+
+.resetButtonBox {
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 30px solid orange;
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+.resetButtonBox:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    border-right: 30px solid rgb(255, 145, 0);
+}
+
+.recordSaveButton {
+    margin-top: 5px;
+    font-family: 'Permanent Marker', cursive;
+    color: whitesmoke;
+    background-color: black;
+    border: 2px solid blueviolet;
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+.recordSaveButton:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+.recordNameTextBox {
+    font-family: 'Permanent Marker', cursive;
+    width: 270px;
+    background-color: black;
+    color: blueviolet;
+    border-color: blueviolet;
+}
+
+.recordSaveFormBox {
+    position: fixed;
+    z-index: 5;
+    bottom: 11vw;
+    margin-left: 18vw;
+    width: 270px;
+    height: 75px;
+    transform: scaleY(0);
+    transition-duration: 0.5s;
+}
