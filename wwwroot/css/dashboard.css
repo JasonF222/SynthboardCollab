@@ -63,6 +63,10 @@ body {
     font-size: 32pt;
 }
 
+.viewBagLimit {
+    font-size: 20pt;
+}
+
 .myRecording {
     display: flex;
     justify-content: center;
