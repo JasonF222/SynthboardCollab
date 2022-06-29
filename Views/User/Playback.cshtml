@@ -18,7 +18,11 @@
 @* make this go bye bye *@
 <div id="PlayBackArray">@Model.KeyPath</div>
 <button onclick="playBack(timeLine)">Play</button>
+<button onclick="selectStyle('triangle')">Classic</button>
+<button onclick="selectStyle('sawtooth')">Fire</button>
+<button onclick="selectStyle('sine')">Water</button>
+<button onclick="selectStyle('square')">Space</button>
 
-
+<p><a asp-action="DeleteRecording" asp-controller="User" asp-route-id="@Model.SoundFileID" >delete</a></p>
 <script src="~/js/playbackscript.js"></script>
 </body>
