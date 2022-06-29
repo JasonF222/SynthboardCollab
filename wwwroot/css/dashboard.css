@@ -17,6 +17,7 @@ body {
 }
 
 .welcome {
+    cursor: default;
     font-size: 28pt;
     font-family: 'Permanent Marker', cursive;
     background: -webkit-linear-gradient(bottom, lightyellow, gold);
@@ -62,16 +63,37 @@ body {
     font-size: 32pt;
 }
 
+.myRecording {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.myRecordingText {
+    font-size: 28pt;
+    text-decoration: none;
+    transform: scale(1);
+    transition-duration: 1s;
+    color: red;
+}
+
+.myRecordingText:hover {
+    transform: scale(1.05);
+    transition-duration: 1s;
+    color: whitesmoke;
+}
+
 .selectBoard {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
+    margin-top: 1%;
     text-align: center;
     width: 500px;
     text-overflow: wrap;
 }
 
 .selectHeader {
+    cursor: default;
     font-size: 48pt;
     font-family: 'Permanent Marker', cursive;
     font-weight: bolder;

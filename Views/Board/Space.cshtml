@@ -25,17 +25,6 @@
         <div class="headerContainer d-flex justify-content-center flexCol1">
             <h1 class="text-center">Mr Synth</h1>
             <h3 class="text-center currentBoard">Space</h3>
-            <button onclick="startRecording()">Record</button>
-            <button onclick="endRecording()">Stop</button>
-            <button onclick="playBack(timeLine)">Preview</button>
-            <button onclick="clearRecording()">Reset Recording</button>
-            <div id="RecordForm" class="">
-                <form asp-controller="Board" asp-action="SaveSound" method="post">
-                    <input type="hidden" asp-for="KeyPath" id="AddPath" value="">
-                    <input asp-for="Name">
-                    <button type="submit" class="mb-5">Save Recording</button>
-                </form>
-            </div>
         </div>
 
         <div class="dashlogbtns flexCol1">
@@ -101,6 +90,41 @@
             </div>
         </div>
     </div>
+
+    <div class="recordContainer d-flex justify-content-center">
+        <p class="recordText ms-4">Record</p>
+        <p class="recordText ms-4">Stop</p>
+        <p class="recordText ms-4">Preview</p>
+        <p class="recordText ms-4">Reset</p>
+    </div>
+
+    <div class="recordHeader d-flex justify-content-center">
+        <p class="recordHeaderText">Record Your Session</p>
+    </div>
+
+    <div class="buttonContainer d-flex justify-content-between">
+        <div class="recordButtonBox recordButton btnmenu" onclick="startRecording()">
+
+        </div>
+        <div class="stopButtonBox stopButton btnmenu" onclick="endRecording()">
+
+        </div>
+        <div class="previewButtonBox previewButton btnmenu" onclick="playBack(timeLine)">
+
+        </div>
+        <div class="resetButtonBox resetButton btnmenu" onclick="clearRecording()">
+
+        </div>
+    </div>
+    
+        <div id="RecordForm" class="recordSaveFormBox">
+            <form asp-controller="Board" asp-action="SaveSound" method="post">
+                <input type="hidden" asp-for="KeyPath" id="AddPath" value="">
+                <input asp-for="Name" placeholder="Name Your Recording..." class="recordNameTextBox">
+                <button type="submit" class="mb-5 recordSaveButton">Save Recording</button>
+            </form>
+        </div>
+
 
     <div id="classic-board">
         <div id="classic-board-sky">
