@@ -119,6 +119,7 @@
     
         <div id="RecordForm" class="recordSaveFormBox">
             <form asp-controller="Board" asp-action="SaveSound" method="post">
+                <input type="hidden" asp-for="BoardType" value="triangle">
                 <input type="hidden" asp-for="KeyPath" id="AddPath" value="">
                 <input asp-for="Name" placeholder="Name Your Recording..." class="recordNameTextBox">
                 <button type="submit" class="mb-5 recordSaveButton">Save Recording</button>

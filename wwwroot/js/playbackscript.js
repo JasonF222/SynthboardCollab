@@ -1,4 +1,5 @@
 const savedSound = document.getElementById("PlayBackArray").innerText;
+const boardType = document.getElementById("BoardType").innerText;
 
 var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -8,7 +9,7 @@ let pitchValue = "mid";
 let sliderValue = 1;
 let startTime = null;
 let pitchStarter = null;
-let oscType = "triangle";
+let oscType = boardType;
 
 class ReplayNode {
     constructor (){

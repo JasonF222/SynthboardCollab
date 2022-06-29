@@ -13,6 +13,7 @@ public class SoundFile
     public string Name {get; set;}
     public string KeyPath {get; set;}
     public int UserID {get; set;}
+    public string BoardType {get; set;}
     public User? Creator {get; set;}
     
 }
