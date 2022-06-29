@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: bolder;
+}
+
+body {
+    background-color: black;
+}
+
+.recordingsTitle {
+    color: yellow;
+}
+
+.text-center {
+    text-align: center;
+    align-items: center;
+    font-family: 'Permanent Marker', cursive;
+}
+
+body {
+    background: black;
+    color: whitesmoke;
+    height: 100%;
+    overflow: hidden;
+}
+
+.headerContainer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    margin-top: 10px;
+    font-size: 48pt;
+    background: -webkit-linear-gradient(top, yellow, goldenrod);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.boardSelectHead {
+    margin-top: 3vw;
+}
+
+
+.dashbtn {
+    color: yellow;
+}
+
+.dashbtn:hover {
+    color: white;
+}
+
+.logbtn {
+    color: yellow;
+}
+
+.logbtn:hover {
+    color: white;
+}
+
+.dashlogbtns {
+    text-decoration: none;
+    font-family: 'Permanent Marker', cursive;
+    text-align: right;
+    font-size: 12pt;
+}
+
+#PlayBackArray {
+    transform: scaleY(0);
+    height: 1px;
+    width: 1px;
+}
+
+.boardSelectButtonContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+.boardChangeBtn {
+    cursor: pointer;
+    font-size: 24pt;
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+.btnClassic:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    color: greenyellow;
+}
+
+.btnFire:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    color: orangered;
+}
+
+.btnWater:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    color: cyan;
+}
+
+.btnSpace:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    color: blueviolet;
+}
+
+.playButton {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7vw;
+    width: 200px;
+}
+
+.btnPlay {
+    cursor: pointer;
+    font-size: 48pt;
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+.btnPlay:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    color: yellow;
+}
+
+.deleteButton {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vw;
+    width: 200px;
+}
+
+.btnDelete {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 30pt;
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+.btnDelete:hover {
+    cursor: pointer;
+    transition-duration: 0.5s;
+    color: red;
+}
+
+.myRecording {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.myRecordingText {
+    font-size: 28pt;
+    text-decoration: none;
+    transform: scale(1);
+    transition-duration: 1s;
+    color: red;
+}
+
+.myRecordingText:hover {
+    transform: scale(1.05);
+    transition-duration: 1s;
+    color: whitesmoke;
+}
