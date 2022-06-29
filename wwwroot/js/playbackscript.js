@@ -1,4 +1,6 @@
-const timeLine = document.getElementById("PlayBackArray").innerText;
+const savedSound = document.getElementById("PlayBackArray").innerText;
+
+let timeLine = JSON.parse(savedSound);
 
 
 let record = false;

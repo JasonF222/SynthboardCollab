@@ -3,14 +3,14 @@
 document.addEventListener("keydown", button1Pressed, true);
 document.addEventListener("keyup", button1Released, true);
 
-let record = false;
+
 let pitchValue = "mid";
 let sliderValue = 1;
-var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
+let record = false;
 let timeLine = [];
 let startTime = null;
 let pitchStarter = null;
-
+var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
 class ReplayNode {
     constructor (){
         this.time = null;
@@ -270,16 +270,21 @@ function startRecording(){
 
 function endRecording(){
     record = false;
-    saveRecording(timeLine);
+    console.log(timeLine);
+    let keyPath = JSON.stringify(timeLine);
+    console.log(keyPath);
+    saveRecording(keyPath);
     return "Recording ended"; 
 }
 
 let someDiv = document.getElementById("AddPath");
 
 function saveRecording(keyPath){
-    someDiv.innerHTML=
-    `
-    <input asp-for="KeyPath" value="${keyPath}">
-    `
+    console.log(keyPath);
+    someDiv.setAttribute("value", keyPath);
     // transform div to exist
+}
+
+function clearRecording(){
+    timeLine = [];
 }

@@ -75,6 +75,7 @@ public class BoardController : Controller
             ViewBag.NotLogged = "You must Login or Register to view content.";
             return RedirectToAction("LogReg", "User");
         }
+        
         int userID = Convert.ToInt32(UID);
         newSound.UserID = userID;
         _context.Sounds.Add(newSound);

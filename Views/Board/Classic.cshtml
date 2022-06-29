@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+@model SoundFile
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,6 +25,17 @@
         <div class="headerContainer d-flex justify-content-center flexCol1">
             <h1 class="text-center">Mr Synth</h1>
             <h3 class="text-center currentBoard">Classic</h3>
+            <button onclick="startRecording()">Record</button>
+            <button onclick="endRecording()">Stop</button>
+            <button onclick="playBack(timeLine)">Preview</button>
+            <button onclick="clearRecording()">Reset Recording</button>
+            <div id="RecordForm" class="">
+                <form asp-controller="Board" asp-action="SaveSound" method="post">
+                    <input type="hidden" asp-for="KeyPath" id="AddPath" value="">
+                    <input asp-for="Name">
+                    <button type="submit" class="mb-5">Save Recording</button>
+                </form>
+            </div>
         </div>
 
         <div class="dashlogbtns flexCol1">
