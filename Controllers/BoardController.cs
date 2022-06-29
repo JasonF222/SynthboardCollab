@@ -64,5 +64,23 @@ public class BoardController : Controller
         }
         return View();
     }
+
+    [HttpPost]
+    [Route("boards/submit/soundfile")]
+    public IActionResult SaveSound(SoundFile newSound)
+    {
+        int? UID = HttpContext.Session.GetInt32("UserID");
+        if(UID == null)
+        {
+            ViewBag.NotLogged = "You must Login or Register to view content.";
+            return RedirectToAction("LogReg", "User");
+        }
+        
+        int userID = Convert.ToInt32(UID);
+        newSound.UserID = userID;
+        _context.Sounds.Add(newSound);
+        _context.SaveChanges();
+        return RedirectToAction("Dashboard","User");
+    }
     
 }

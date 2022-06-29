@@ -3,13 +3,14 @@
 document.addEventListener("keydown", button1Pressed, true);
 document.addEventListener("keyup", button1Released, true);
 
-let record = false;
+
 let pitchValue = "mid";
 let sliderValue = 1;
-var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
+let record = false;
 let timeLine = [];
 let startTime = null;
-
+let pitchStarter = null;
+var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
 class ReplayNode {
     constructor (){
         this.time = null;
@@ -227,8 +228,16 @@ function directionBoxHide() {
 }
 
 function playBack(playBackArr){
-    pitchValue = "mid";
-    console.log("playing back");
+    pitchValue = pitchStarter;
+    if(pitchValue == "mid"){
+        moveSlider(1);
+    }
+    if(pitchValue == "low"){
+        moveSlider(0);
+    }
+    if(pitchValue == "high"){
+        moveSlider(2);
+    }
     console.log(playBackArr);
     var i = 0;
     return playRecur(playBackArr, i);
@@ -255,11 +264,27 @@ function playRecur(arr, i){
 function startRecording(){
     record = true;
     startTime = new Date();
+    pitchStarter = pitchValue;
     return "Recording Started";
 }
 
 function endRecording(){
     record = false;
-    // popout form to save recording
+    console.log(timeLine);
+    let keyPath = JSON.stringify(timeLine);
+    console.log(keyPath);
+    saveRecording(keyPath);
     return "Recording ended"; 
+}
+
+let someDiv = document.getElementById("AddPath");
+
+function saveRecording(keyPath){
+    console.log(keyPath);
+    someDiv.setAttribute("value", keyPath);
+    // transform div to exist
+}
+
+function clearRecording(){
+    timeLine = [];
 }

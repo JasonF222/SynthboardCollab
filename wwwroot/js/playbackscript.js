@@ -1,15 +1,15 @@
-// FunkyTown: A A G A  EE A D C A //
+const savedSound = document.getElementById("PlayBackArray").innerText;
 
-document.addEventListener("keydown", button1Pressed, true);
-document.addEventListener("keyup", button1Released, true);
+let timeLine = JSON.parse(savedSound);
 
+
+let record = false;
 let pitchValue = "mid";
 let sliderValue = 1;
-let record = false;
-let timeLine = [];
+var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
 let startTime = null;
 let pitchStarter = null;
-var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
+let oscType = "sawtooth";
 
 class ReplayNode {
     constructor (){
@@ -18,6 +18,7 @@ class ReplayNode {
         this.pressRelease = null;
     }
 }
+
 
 
 var synthKeyElements = {
@@ -85,24 +86,55 @@ var synthKeyElements = {
 };
 
 function button1Pressed(e) {
+    if(record){
+        let eventRecord =  new ReplayNode();
+        eventRecord.keyCode = e.keyCode;
+        let endTime = new Date();
+        var timeDiff = (endTime - startTime);    
+        eventRecord.time = timeDiff;
+        eventRecord.pressRelease = true;
+        timeLine.push(eventRecord);
+    }
+    
     if(e.keyCode == 32) {
         pitchValue = "mid";
         moveSlider(1);
+        return;
     }
     if(e.keyCode == 16) {
         pitchValue = "high";
         moveSlider(2);
+        return;
     }
     if(e.keyCode == 17) {
         pitchValue = "low";
         moveSlider(0);
+        return;
     }
     OnOscillatorStart(e.keyCode);
     var synthKey = document.getElementById(synthKeyElements[e.keyCode].elementReference);
-    keyChangerDown(synthKey);
+    keyChangerDown(synthKey);    
 }
 
 function button1Released(e) {
+    if(record){
+        let eventRecord =  new ReplayNode();
+        eventRecord.keyCode = e.keyCode;
+        let endTime = new Date();
+        var timeDiff = (endTime - startTime);    
+        eventRecord.time = timeDiff;
+        eventRecord.pressRelease = false;
+        timeLine.push(eventRecord);
+    }
+    if(e.keyCode == 32) {
+        return;
+    }
+    if(e.keyCode == 16) {
+        return;
+    }
+    if(e.keyCode == 17) {
+        return;
+    }
     OnOscillatorStop(e.keyCode);
     var synthKey = document.getElementById(synthKeyElements[e.keyCode].elementReference);
     keyChangerUp(synthKey);
@@ -124,7 +156,7 @@ function OnOscillatorStart(key) {
 
     gainNode.gain.value = 0.02;
     oscillator.frequency.value = GetFrequency(key);
-    oscillator.type = "square";
+    oscillator.type = oscType;
     oscillatorDictionary[key] = oscillator;
     oscillatorDictionary[key].start();
 }
@@ -148,13 +180,13 @@ function GetFrequency(key) {
 }
 
 function keyChangerDown(synthKey) {
-    synthKey.style.backgroundColor = "steelblue";
+    synthKey.style.backgroundColor = "orangered";
     synthKey.style.border = "3px solid white";
 }
 
 function keyChangerUp(synthKey) {
     synthKey.style.backgroundColor = "black";
-    synthKey.style.border = "3px solid aqua";
+    synthKey.style.border = "3px solid orangered";
 }
 
 function moveSlider(val) {
@@ -226,33 +258,4 @@ function playRecur(arr, i){
         }
         return playRecur(arr, i+1);
     }
-}
-
-
-function startRecording(){
-    record = true;
-    startTime = new Date();
-    pitchStarter = pitchValue;
-    return "Recording Started";
-}
-
-function endRecording(){
-    record = false;
-    console.log(timeLine);
-    let keyPath = JSON.stringify(timeLine);
-    console.log(keyPath);
-    saveRecording(keyPath);
-    return "Recording ended"; 
-}
-
-let someDiv = document.getElementById("AddPath");
-
-function saveRecording(keyPath){
-    console.log(keyPath);
-    someDiv.setAttribute("value", keyPath);
-    // transform div to exist
-}
-
-function clearRecording(){
-    timeLine = [];
 }

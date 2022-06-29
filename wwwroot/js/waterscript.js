@@ -5,8 +5,18 @@ document.addEventListener("keyup", button1Released, true);
 
 let pitchValue = "mid";
 let sliderValue = 1;
-
+let record = false;
+let timeLine = [];
+let startTime = null;
+let pitchStarter = null;
 var synthKeyContext = new (window.AudioContext || window.webkitAudioContext)();
+class ReplayNode {
+    constructor (){
+        this.time = null;
+        this.keyCode = null;
+        this.pressRelease = null;
+    }
+}
 
 var synthKeyElements = {
     81 : {
@@ -181,4 +191,45 @@ function directionBoxHide() {
     let divGrab = document.getElementById("directionBox");
     divGrab.style.transform = "scaleY(0)";
     divGrab.style.transitionDuration = "1s";
+}
+
+function playBack(playBackArr){
+    pitchValue = pitchStarter;
+    if(pitchValue == "mid"){
+        moveSlider(1);
+    }
+    if(pitchValue == "low"){
+        moveSlider(0);
+    }
+    if(pitchValue == "high"){
+        moveSlider(2);
+    }
+    console.log(playBackArr);
+    var i = 0;
+    return playRecur(playBackArr, i);
+}
+
+function playRecur(arr, i){
+    if(i < arr.length){
+        console.log("playing");
+        if(arr[i].pressRelease === true){
+            setTimeout(() => {
+                button1Pressed(arr[i])
+            }, arr[i].time);
+        }
+        if(arr[i].pressRelease === false){
+            setTimeout(() => {
+                button1Released(arr[i])
+            }, arr[i].time);
+        }
+        return playRecur(arr, i+1);
+    }
+}
+
+
+function startRecording(){
+    record = true;
+    startTime = new Date();
+    pitchStarter = pitchValue;
+    return "Recording Started";
 }
