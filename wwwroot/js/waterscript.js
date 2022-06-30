@@ -222,7 +222,13 @@ function directionBoxHide() {
     divGrab.style.transitionDuration = "1s";
 }
 
+let playingBack = false;
+
 function playBack(playBackArr){
+    if(playingBack){
+        return
+    }
+    playingBack = true;
     pitchValue = pitchStarter;
     var i = 0;
     if(pitchValue == "mid"){
@@ -251,12 +257,16 @@ function playRecur(arr, i){
         }
         return playRecur(arr, i+1);
     }
+    playingBack = false;
 }
+
+let recordStatus = document.querySelector(".recordHeaderText");
 
 function startRecording(){
     record = true;
     startTime = new Date();
     pitchStarter = pitchValue;
+    recordStatus.innerText = "Recording";
     return "Recording Started";
 }
 
@@ -264,6 +274,7 @@ function endRecording(){
     record = false;
     let keyPath = JSON.stringify(timeLine);
     saveRecording(keyPath);
+    recordStatus.innerText = "Review/Save Recording";
     return "Recording ended"; 
 }
 
@@ -281,5 +292,6 @@ function saveRecording(keyPath){
 function clearRecording(){
     const divGrabber = document.querySelector(".recordSaveFormBox");
     timeLine = [];
+    recordStatus.innerText = "Record Your Session";
     divGrabber.style.transform = "scaleY(0)";
 }
