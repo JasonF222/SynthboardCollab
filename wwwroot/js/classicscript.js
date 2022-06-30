@@ -226,11 +226,18 @@ let playingBack = false;
 
 function playBack(playBackArr){
     if(playingBack){
-        return
+        return;
     }
     playingBack = true;
     pitchValue = pitchStarter;
     var i = 0;
+    var t = 0;
+    for(var idx = 0; idx<playBackArr.length; idx++){
+        t += playBackArr[i].time;
+    }
+    setTimeout(() => {
+        donePlaying()
+    }, t * .425);
     if(pitchValue == "mid"){
         moveSlider(1);
     }
@@ -257,12 +264,12 @@ function playRecur(arr, i){
         }
         return playRecur(arr, i+1);
     }
-    playingBack = false;
 }
 
 let recordStatus = document.querySelector(".recordHeaderText");
 
 function startRecording(){
+    timeLine =[];
     record = true;
     startTime = new Date();
     pitchStarter = pitchValue;
@@ -272,9 +279,9 @@ function startRecording(){
 
 function endRecording(){
     record = false;
+    recordStatus.innerText = "Review/Save Recording";
     let keyPath = JSON.stringify(timeLine);
     saveRecording(keyPath);
-    recordStatus.innerText = "Review/Save Recording";
     return "Recording ended"; 
 }
 
@@ -294,4 +301,8 @@ function clearRecording(){
     timeLine = [];
     recordStatus.innerText = "Record Your Session";
     divGrabber.style.transform = "scaleY(0)";
+}
+
+function donePlaying(){
+    playingBack = false;
 }
