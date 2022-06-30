@@ -503,3 +503,18 @@ body {
     transform: scaleY(0);
     transition-duration: 0.5s;
 }
+
+.guestMessage {
+    font-family: 'Permanent Marker', cursive;
+    z-index: 5;
+    color: white;
+}
+
+.recordSaveFormBoxGuest {
+    position: fixed;
+    z-index: 5;
+    bottom: 11vw;
+    margin-left: 18vw;
+    width: 270px;
+    height: 75px;
+}

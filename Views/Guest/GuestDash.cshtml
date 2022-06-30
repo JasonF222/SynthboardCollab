@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/dashboard.css">
+    
+</head>
+<body>
+    <div class="navhead text-center">
+        <h1 class="welcome">Welcome Guest</h1>
+        <p class="logoutbtn"><a asp-controller="User" asp-action="LogReg" class="buttonstyle">Register</a></p>
+    </div>
+
+    <div class="rain-div">
+
+    </div>
+
+    @* <div class="vBag mt-5">
+        <h4 class="text-center viewBagLimit">@ViewBag.Limit</h4>
+    </div> *@
+    
+    <div class="myRecording">
+        <h4>Save Recordings only for Registered Users</h4>
+    </div>
+    <div class="selectBoard">
+        <h1 class="selectHeader">Select a Board</h1>
+    </div>
+    <div class="boardContainer">
+        <div class="board boardClassic">
+            <p><a asp-controller="Guest" asp-action="GuestClassic"class="select-board-text-classic">Classic</a></p>
+        </div>
+        <div class=" board boardFireStyle">
+            <p><a asp-controller="Guest" asp-action="GuestFire" class="select-board-text-fire">Fire</a></p>
+        </div>
+        <div class=" board boardWaterStyle">
+            <p><a asp-controller="Guest" asp-action="GuestWater" class="select-board-text-water">Water</a></p>
+        </div>
+        <div class=" board boardSpaceStyle">
+            <p><a asp-controller="Guest" asp-action="GuestSpace" class="select-board-text-space">Space</a></p>
+        </div>
+    </div>
+    <script src="~/js/dashboardscript.js"></script>
+</body>
+</html>

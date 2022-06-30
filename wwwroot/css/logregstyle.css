@@ -12,6 +12,24 @@ body {
     overflow: hidden;
 }
 
+.guest {
+    text-align: center;
+}
+
+.guestBtn {
+    font-family: 'Permanent Marker', cursive;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 20pt;
+    transition-duration: 0.5s;
+}
+
+.guestBtn:hover {
+    transition-duration: 0.5s;
+    color: hotpink;
+}
+
 .titlehead {
     text-align: center;
 }
