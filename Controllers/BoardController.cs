@@ -89,8 +89,7 @@ public class BoardController : Controller
             _context.SaveChanges();
             return RedirectToAction("Dashboard","User");
         }
-        ViewBag.Limit = "Something went wrong saving your recording.";
-        return RedirectToAction("Dashboard","User");
+        return RedirectToAction("Dashboard", "User");
     }
 
 }
