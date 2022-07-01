@@ -11,8 +11,10 @@ public class SoundFile
     [Required(ErrorMessage = "is required.")]
     [MinLength(3, ErrorMessage = "must be at least 3 characters.")]
     public string Name {get; set;}
+    [Required]
+    [MinLength(1)]
     public string KeyPath {get; set;}
-    public int UserID {get; set;}
+    public int? UserID {get; set;}
     public string BoardType {get; set;}
     public User? Creator {get; set;}
     
