@@ -475,3 +475,9 @@ body {
     width: 270px;
     height: 75px;
 }
+
+.saveErrorMsg {
+    font-size: 16pt;
+    font-family: 'Permanent Marker', cursive;
+    color: orangered;
+}
