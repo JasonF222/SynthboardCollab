@@ -89,7 +89,22 @@ public class BoardController : Controller
             _context.SaveChanges();
             return RedirectToAction("Dashboard","User");
         }
-        return RedirectToAction("Dashboard", "User");
+        if(newSound.BoardType == "triangle")
+        {
+            return View("Classic");
+        }
+        if(newSound.BoardType == "sawtooth")
+        {
+            return View("Fire");
+        }
+        if(newSound.BoardType == "sine")
+        {
+            return View("Water");
+        }
+        if(newSound.BoardType == "square")
+        {
+            return View("Space");
+        }
+        return RedirectToAction("Dashboard", "User");    
     }
-
 }
