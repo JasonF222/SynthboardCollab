@@ -129,7 +129,7 @@ public class UserController : Controller
         List<SoundFile> userRecordings = _context.Sounds.Where(s => s.UserID == userID).ToList();
         if(userRecordings.Count() > 9)
         {
-            ViewBag.Limit = "You have the maximum number of recordings. Please delete one to add new recordings.";
+            ViewBag.recordFull = "You have the maximum number of recordings. Please delete one to add new recordings.";
         }
         return View("Recordings", userRecordings);
     }
