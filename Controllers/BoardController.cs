@@ -69,23 +69,28 @@ public class BoardController : Controller
     [Route("boards/submit/soundfile")]
     public IActionResult SaveSound(SoundFile newSound)
     {
-        int? UID = HttpContext.Session.GetInt32("UserID");
-        if(UID == null)
+        if(ModelState.IsValid)
         {
-            ViewBag.NotLogged = "You must Login or Register to view content.";
-            return RedirectToAction("LogReg", "User");
+            int? UID = HttpContext.Session.GetInt32("UserID");
+            if(UID == null)
+                {
+                    ViewBag.NotLogged = "You must Login or Register to view content.";
+                    return RedirectToAction("LogReg", "User");
+                }
+            int userID = Convert.ToInt32(UID);
+            List<SoundFile>? allRecord = _context.Sounds.Where(s => s.UserID == userID).ToList();
+            if(allRecord.Count() > 9) 
+            {
+                ViewBag.Limit = "You have the maximum number of recordings. Please delete one to add new recordings.";
+                return RedirectToAction("Dashboard", "User");
+            }
+            newSound.UserID = userID;
+            _context.Sounds.Add(newSound);
+            _context.SaveChanges();
+            return RedirectToAction("Dashboard","User");
         }
-        int userID = Convert.ToInt32(UID);
-        List<SoundFile>? allRecord = _context.Sounds.Where(s => s.UserID == userID).ToList();
-        if(allRecord.Count() > 9) 
-        {
-            ViewBag.Limit = "You have the maximum number of recordings. Please delete one to add new recordings.";
-            return RedirectToAction("Dashboard", "User");
-        }
-        newSound.UserID = userID;
-        _context.Sounds.Add(newSound);
-        _context.SaveChanges();
+        ViewBag.Limit = "Something went wrong saving your recording.";
         return RedirectToAction("Dashboard","User");
     }
-    
+
 }
